@@ -24,13 +24,15 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      - name: Deploy to Hostinger via SSH/rsync
-        uses: easingthemes/ssh-deploy@v4
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
-          REMOTE_HOST: ${{ secrets.HOSTINGER_SSH_HOST }}
-          REMOTE_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
-          REMOTE_USER: ${{ secrets.HOSTINGER_SSH_USER }}
-          SOURCE: "out/"
-          TARGET: ${{ secrets.HOSTINGER_REMOTE_PATH }}
-          ARGS: "-rlgoDzvc --delete"
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.HOSTINGER_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.HOSTINGER_SSH_PORT }}" "${{ secrets.HOSTINGER_SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy to Hostinger via rsync
+        run: |
+          rsync -rlgoDzvc --delete \
+            -e "ssh -p ${{ secrets.HOSTINGER_SSH_PORT }} -i ~/.ssh/deploy_key" \
+            out/ "${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }}:${{ secrets.HOSTINGER_REMOTE_PATH }}"
