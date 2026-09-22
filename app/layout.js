@@ -1,18 +1,20 @@
-import { Fraunces, Public_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+// Polices auto-hébergées (public/fonts) — évite une dépendance réseau vers
+// fonts.googleapis.com au moment du build, qui s'est révélée intermittente sur CI.
+const fraunces = localFont({
+  src: "../public/fonts/Fraunces-Variable.woff2",
+  weight: "400 700",
   variable: "--font-fraunces"
 });
 
-const publicSans = Public_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const publicSans = localFont({
+  src: "../public/fonts/PublicSans-Variable.woff2",
+  weight: "400 700",
   variable: "--font-public-sans"
 });
 
