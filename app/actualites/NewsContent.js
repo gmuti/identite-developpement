@@ -5,8 +5,15 @@ import PageHeader from "@/components/PageHeader";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { urlFor } from "@/lib/sanity";
 
+function formatDate(value, locale) {
+  if (!value) return value;
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return value;
+  return new Intl.DateTimeFormat(locale === "en" ? "en-CA" : "fr-CA", { dateStyle: "long" }).format(parsed);
+}
+
 export default function NewsContent({ news, events }) {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <>
@@ -40,7 +47,7 @@ export default function NewsContent({ news, events }) {
                   <div className="flex items-center gap-2.5">
                     <span className="text-xs font-bold uppercase tracking-wide text-gold-dark">{n.tag}</span>
                     <span className="text-xs text-muted">•</span>
-                    <span className="text-xs text-muted">{n.date}</span>
+                    <span className="text-xs text-muted">{formatDate(n.date, locale)}</span>
                   </div>
                   <h3 className="mt-2.5 text-[17px] leading-snug text-ink">{n.title}</h3>
                   {n.excerpt && <p className="mt-2 text-sm leading-relaxed text-muted">{n.excerpt}</p>}
@@ -72,7 +79,7 @@ export default function NewsContent({ news, events }) {
                   </div>
                   <div className="flex flex-shrink-0 flex-col items-end gap-1 text-right">
                     <span className="rounded-full bg-gold/15 px-3 py-1 text-xs font-bold text-gold-dark">
-                      {e.date || t.news.dateSoon}
+                      {formatDate(e.date, locale) || t.news.dateSoon}
                     </span>
                     {e.location && <span className="text-xs text-muted">{e.location}</span>}
                   </div>
