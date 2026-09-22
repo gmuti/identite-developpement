@@ -4,5 +4,6 @@ const projectId = process.env.SANITY_STUDIO_PROJECT_ID || process.env.NEXT_PUBLI
 const dataset = process.env.SANITY_STUDIO_DATASET || process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 
 export default defineCliConfig({
-  api: { projectId, dataset }
+  api: { projectId, dataset },
+  studioHost: "identite-developpement"
 });

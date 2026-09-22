@@ -5,6 +5,10 @@
 /.next/
 /out/
 
+# sanity studio build
+/dist/
+/.sanity/
+
 # production
 /build
 
