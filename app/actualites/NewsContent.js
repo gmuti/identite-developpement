@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { urlFor } from "@/lib/sanity";
 
 export default function NewsContent({ news, events }) {
   const { t } = useLanguage();
@@ -20,9 +22,20 @@ export default function NewsContent({ news, events }) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {news.map((n) => (
               <div key={n._id} className="card-hover stagger-card overflow-hidden rounded-2xl border border-line bg-white">
-                <div className="flex h-40 items-center justify-center bg-gradient-to-br from-navy to-navy-dark">
-                  <span className="text-[13px] text-white/60">{t.news.photoSoon}</span>
-                </div>
+                {n.image ? (
+                  <div className="relative h-40 w-full">
+                    <Image
+                      src={urlFor(n.image).width(800).height(400).fit("crop").url()}
+                      alt={n.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex h-40 items-center justify-center bg-gradient-to-br from-navy to-navy-dark">
+                    <span className="text-[13px] text-white/60">{t.news.photoSoon}</span>
+                  </div>
+                )}
                 <div className="p-[22px]">
                   <div className="flex items-center gap-2.5">
                     <span className="text-xs font-bold uppercase tracking-wide text-gold-dark">{n.tag}</span>

@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { urlFor } from "@/lib/sanity";
 
 export default function HomeContent({ news }) {
   const { t } = useLanguage();
@@ -141,9 +143,20 @@ export default function HomeContent({ news }) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {news.map((n) => (
               <div key={n._id} className="card-hover overflow-hidden rounded-2xl border border-line bg-white">
-                <div className="flex h-40 items-center justify-center bg-gradient-to-br from-navy to-navy-dark">
-                  <span className="text-[13px] text-white/60">{t.home.photoSoon}</span>
-                </div>
+                {n.image ? (
+                  <div className="relative h-40 w-full">
+                    <Image
+                      src={urlFor(n.image).width(800).height(400).fit("crop").url()}
+                      alt={n.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex h-40 items-center justify-center bg-gradient-to-br from-navy to-navy-dark">
+                    <span className="text-[13px] text-white/60">{t.home.photoSoon}</span>
+                  </div>
+                )}
                 <div className="p-[22px]">
                   <span className="text-xs font-bold uppercase tracking-wide text-gold-dark">{n.tag}</span>
                   <h3 className="mt-2.5 text-[17px] leading-snug text-ink">{n.title}</h3>
