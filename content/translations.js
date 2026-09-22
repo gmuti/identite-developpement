@@ -35,10 +35,19 @@ export const translations = {
       ],
       values: ["Intégrité", "Transparence", "Responsabilité", "Respect", "Compassion", "Service", "Excellence", "Bonne gestion"],
       fondateurs: [
-        { initials: "OM", name: "Olivier Musanganya Lubambo", role: "Fondateur" },
-        { initials: "GL", name: "Germaine Linda Mutikanga Basimine", role: "Cofondatrice" }
+        {
+          initials: "OM",
+          name: "Olivier Musanganya Lubambo",
+          role: "Fondateur",
+          description: "Gardien de la vision depuis la fondation de l'organisation."
+        },
+        {
+          initials: "GL",
+          name: "Germaine Linda Mutikanga Basimine",
+          role: "Cofondatrice",
+          description: "À ses côtés depuis les premiers jours, elle incarne l'engagement communautaire au cœur de la mission."
+        }
       ],
-      founderDesc: "Gardien(ne) permanent(e) de la vision de l'organisation.",
       departments: [
         {
           name: "Technologies, Médias et Communication",
@@ -282,10 +291,19 @@ export const translations = {
       ],
       values: ["Integrity", "Transparency", "Accountability", "Respect", "Compassion", "Service", "Excellence", "Good Stewardship"],
       fondateurs: [
-        { initials: "OM", name: "Olivier Musanganya Lubambo", role: "Founder" },
-        { initials: "GL", name: "Germaine Linda Mutikanga Basimine", role: "Co-founder" }
+        {
+          initials: "OM",
+          name: "Olivier Musanganya Lubambo",
+          role: "Founder",
+          description: "Guardian of the vision since the organization's founding."
+        },
+        {
+          initials: "GL",
+          name: "Germaine Linda Mutikanga Basimine",
+          role: "Co-founder",
+          description: "By his side from the very first days, she embodies the community commitment at the heart of the mission."
+        }
       ],
-      founderDesc: "Permanent guardian of the organization's vision.",
       departments: [
         {
           name: "Technology, Media and Communication",

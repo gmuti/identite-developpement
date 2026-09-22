@@ -5,7 +5,7 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function AboutContent() {
   const { t } = useLanguage();
-  const { vision, mission, objectifs, values, fondateurs, founderDesc } = t.siteData;
+  const { vision, mission, objectifs, values, fondateurs } = t.siteData;
 
   return (
     <>
@@ -87,7 +87,7 @@ export default function AboutContent() {
                 <div>
                   <h3 className="mb-1 text-lg text-ink">{f.name}</h3>
                   <span className="text-[13px] font-bold uppercase tracking-wide text-gold-dark">{f.role}</span>
-                  <p className="mt-2.5 text-sm leading-relaxed text-muted">{founderDesc}</p>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted">{f.description}</p>
                 </div>
               </div>
             ))}
