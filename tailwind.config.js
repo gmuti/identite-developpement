@@ -7,7 +7,9 @@ module.exports = {
         navy: "#051829",
         "navy-dark": "#04111D",
         gold: "#E7C645",
-        "gold-dark": "#C9A730",
+        // Assombri par rapport à la maquette d'origine (#C9A730, contraste 2.2:1 sur fond clair,
+        // sous le seuil AA de 4.5:1 pour le texte) — même teinte, luminosité réduite pour l'accessibilité.
+        "gold-dark": "#7C671D",
         cream: "#FAF8F3",
         ink: "#14212B",
         muted: "#5B6B74",

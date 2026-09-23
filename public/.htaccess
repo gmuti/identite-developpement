@@ -1,0 +1,3 @@
+# Sert la page 404 personnalisée du site (générée par Next.js dans out/404.html)
+# au lieu de la page d'erreur par défaut d'Apache sur les URL inconnues.
+ErrorDocument 404 /404.html

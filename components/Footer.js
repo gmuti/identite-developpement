@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function Footer() {
@@ -14,6 +15,14 @@ export default function Footer() {
           <span className="text-[13px] text-[#9FB3BF]">{t.footer.rights(new Date().getFullYear())}</span>
         </div>
         <span className="text-[13px] text-[#7C93A0]">{t.siteData.slogan}</span>
+      </div>
+      <div className="mx-auto mt-6 flex max-w-7xl flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/5 pt-6">
+        <Link href="/mentions-legales" className="text-xs text-[#7C93A0] transition-colors hover:text-white">
+          {t.legal.crumb}
+        </Link>
+        <Link href="/politique-de-confidentialite" className="text-xs text-[#7C93A0] transition-colors hover:text-white">
+          {t.privacy.crumb}
+        </Link>
       </div>
     </footer>
   );

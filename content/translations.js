@@ -5,8 +5,15 @@ export const translations = {
     common: {
       home: "Accueil"
     },
+    notFound: {
+      eyebrow: "Erreur 404",
+      title: "Page introuvable",
+      text: "La page que vous cherchez n'existe pas ou a été déplacée.",
+      cta: "Retour à l'accueil"
+    },
     nav: {
       orgName: "Identité et Développement",
+      home: "Accueil",
       about: "À propos",
       departments: "Départements",
       projects: "Nos projets",
@@ -255,6 +262,63 @@ export const translations = {
       fieldEmail: "Courriel",
       fieldPhone: "Téléphone",
       fieldAddress: "Adresse"
+    },
+    legal: {
+      crumb: "Mentions légales",
+      title: "Mentions légales",
+      updated: "Dernière mise à jour : 23 septembre 2026",
+      sections: [
+        {
+          heading: "Éditeur du site",
+          body:
+            "Ce site est édité par Identité et Développement, organisme à but non lucratif basé en Ontario, Canada, actuellement en démarche vers l'obtention du statut d'organisme de bienfaisance enregistré. Responsable de la publication : Olivier Musanganya Lubambo, fondateur."
+        },
+        {
+          heading: "Hébergement",
+          body: "Le site est hébergé par Hostinger (hostinger.com)."
+        },
+        {
+          heading: "Conception et développement",
+          body:
+            "Conception, développement et sécurité du site assurés par le département Technologies, Médias et Communication d'Identité et Développement."
+        },
+        {
+          heading: "Propriété intellectuelle",
+          body:
+            "L'ensemble des textes, images, logos et éléments graphiques de ce site sont la propriété d'Identité et Développement, sauf mention contraire, et ne peuvent être reproduits, distribués ou réutilisés sans autorisation écrite préalable."
+        },
+        {
+          heading: "Limitation de responsabilité",
+          body:
+            "Les informations publiées sur ce site sont fournies à titre indicatif et mises à jour dans la mesure du possible. Identité et Développement ne peut être tenu responsable des erreurs, omissions, ou de l'indisponibilité temporaire du site, ni du contenu des sites externes vers lesquels il pourrait renvoyer."
+        }
+      ]
+    },
+    privacy: {
+      crumb: "Politique de confidentialité",
+      title: "Politique de confidentialité",
+      updated: "Dernière mise à jour : 23 septembre 2026",
+      sections: [
+        {
+          heading: "Données que nous collectons",
+          body:
+            "À ce jour, les formulaires de ce site (contact, don, infolettre) sont en cours de connexion à un service d'envoi sécurisé et ne transmettent ni ne stockent automatiquement de données. Si vous nous écrivez directement par courriel, nous recevons uniquement les informations que vous choisissez de nous transmettre (nom, adresse courriel, contenu du message). Cette politique sera mise à jour dès que les formulaires seront pleinement connectés, pour préciser quelles données sont alors transmises, à qui, et pour combien de temps elles sont conservées."
+        },
+        {
+          heading: "Témoins de navigation (cookies) et suivi",
+          body:
+            "Ce site n'utilise aucun cookie de suivi ni outil d'analyse ou de publicité tiers. La seule information conservée localement est votre préférence de langue d'affichage (français ou anglais), enregistrée dans le stockage local de votre navigateur (localStorage) — elle reste sur votre appareil et n'est jamais transmise à nos serveurs."
+        },
+        {
+          heading: "Vos droits",
+          body:
+            "Conformément à la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE), vous pouvez en tout temps demander à accéder aux renseignements personnels que vous nous avez transmis, les faire corriger, ou en demander la suppression, en nous écrivant à l'adresse ci-dessous."
+        },
+        {
+          heading: "Nous contacter",
+          body: "Pour toute question relative à cette politique ou à vos renseignements personnels, écrivez-nous à l'adresse indiquée sur notre page Contact."
+        }
+      ]
     }
   },
 
@@ -262,8 +326,15 @@ export const translations = {
     common: {
       home: "Home"
     },
+    notFound: {
+      eyebrow: "404 Error",
+      title: "Page not found",
+      text: "The page you're looking for doesn't exist or has been moved.",
+      cta: "Back to home"
+    },
     nav: {
       orgName: "Identité et Développement",
+      home: "Home",
       about: "About Us",
       departments: "Departments",
       projects: "Our Projects",
@@ -507,6 +578,62 @@ export const translations = {
       fieldEmail: "Email",
       fieldPhone: "Phone",
       fieldAddress: "Address"
+    },
+    legal: {
+      crumb: "Legal Notice",
+      title: "Legal Notice",
+      updated: "Last updated: September 23, 2026",
+      sections: [
+        {
+          heading: "Site publisher",
+          body:
+            "This site is published by Identité et Développement, a non-profit organization based in Ontario, Canada, currently in the process of obtaining registered charity status. Publication is overseen by Olivier Musanganya Lubambo, founder."
+        },
+        {
+          heading: "Hosting",
+          body: "This site is hosted by Hostinger (hostinger.com)."
+        },
+        {
+          heading: "Design and development",
+          body: "Site design, development, and security are handled by the Technologies, Media and Communication department of Identité et Développement."
+        },
+        {
+          heading: "Intellectual property",
+          body:
+            "All text, images, logos, and graphic elements on this site are the property of Identité et Développement, unless otherwise stated, and may not be reproduced, distributed, or reused without prior written permission."
+        },
+        {
+          heading: "Limitation of liability",
+          body:
+            "Information published on this site is provided for informational purposes and updated whenever possible. Identité et Développement cannot be held liable for errors, omissions, temporary unavailability of the site, or the content of external sites it may link to."
+        }
+      ]
+    },
+    privacy: {
+      crumb: "Privacy Policy",
+      title: "Privacy Policy",
+      updated: "Last updated: September 23, 2026",
+      sections: [
+        {
+          heading: "Data we collect",
+          body:
+            "As of now, the forms on this site (contact, donation, newsletter) are still being connected to a secure delivery service and do not automatically transmit or store any data. If you email us directly, we only receive the information you choose to send us (name, email address, message content). This policy will be updated once the forms are fully connected, to specify what data is transmitted, to whom, and for how long it is kept."
+        },
+        {
+          heading: "Cookies and tracking",
+          body:
+            "This site does not use any tracking cookies, analytics, or third-party advertising tools. The only information stored locally is your display language preference (French or English), saved in your browser's local storage — it stays on your device and is never sent to our servers."
+        },
+        {
+          heading: "Your rights",
+          body:
+            "Under Canada's Personal Information Protection and Electronic Documents Act (PIPEDA), you may at any time request access to, correction of, or deletion of the personal information you have shared with us by writing to the address below."
+        },
+        {
+          heading: "Contact us",
+          body: "For any question about this policy or your personal information, write to us at the address listed on our Contact page."
+        }
+      ]
     }
   }
 };

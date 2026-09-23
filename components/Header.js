@@ -12,6 +12,7 @@ export default function Header() {
   const { locale, toggleLocale, t } = useLanguage();
 
   const nav = [
+    { href: "/", label: t.nav.home },
     { href: "/a-propos", label: t.nav.about },
     { href: "/departements", label: t.nav.departments },
     { href: "/projets", label: t.nav.projects },
