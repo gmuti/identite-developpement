@@ -21,7 +21,7 @@ export default function Header() {
   ];
 
   // next.config.mjs a trailingSlash:true, donc usePathname() renvoie "/a-propos/"
-  // alors que les href ci-dessus n'ont pas de slash final — on normalise avant de comparer.
+  // alors que les href ci-dessus n'ont pas de slash final - on normalise avant de comparer.
   const withoutTrailingSlash = (p) => (p.length > 1 ? p.replace(/\/$/, "") : p);
   const isActive = (href) => withoutTrailingSlash(pathname) === withoutTrailingSlash(href);
 

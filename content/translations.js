@@ -1,4 +1,4 @@
-// Dictionnaire de traduction FR / EN — source unique de tout le texte du site.
+// Dictionnaire de traduction FR / EN - source unique de tout le texte du site.
 
 export const translations = {
   fr: {
@@ -27,7 +27,7 @@ export const translations = {
       legalHeading: "Légal",
       contactHeading: "Coordonnées",
       followHeading: "Suivez-nous",
-      nonprofitBadge: "Organisme à but non lucratif — Ontario, Canada"
+      nonprofitBadge: "Organisme à but non lucratif - Ontario, Canada"
     },
     siteData: {
       slogan: "Découvrir son identité, bâtir son avenir.",
@@ -235,7 +235,7 @@ export const translations = {
       customAmountLabel: "Ou montant personnalisé",
       customAmountPlaceholder: "Ex. 75",
       currency: "CAD",
-      payButton: "Paiement sécurisé — bientôt disponible",
+      payButton: "Paiement sécurisé - bientôt disponible",
       payNote1: "Le formulaire de paiement en ligne (Stripe / PayPal) est en cours d'intégration.",
       payNote2Prefix: "En attendant, contactez-nous via la page ",
       payNote2Link: "Contact",
@@ -312,7 +312,7 @@ export const translations = {
         {
           heading: "Témoins de navigation (cookies) et suivi",
           body:
-            "Ce site n'utilise aucun cookie de suivi ni outil d'analyse ou de publicité tiers. La seule information conservée localement est votre préférence de langue d'affichage (français ou anglais), enregistrée dans le stockage local de votre navigateur (localStorage) — elle reste sur votre appareil et n'est jamais transmise à nos serveurs."
+            "Ce site n'utilise aucun cookie de suivi ni outil d'analyse ou de publicité tiers. La seule information conservée localement est votre préférence de langue d'affichage (français ou anglais), enregistrée dans le stockage local de votre navigateur (localStorage) - elle reste sur votre appareil et n'est jamais transmise à nos serveurs."
         },
         {
           heading: "Vos droits",
@@ -353,7 +353,7 @@ export const translations = {
       legalHeading: "Legal",
       contactHeading: "Contact",
       followHeading: "Follow us",
-      nonprofitBadge: "Non-profit organization — Ontario, Canada"
+      nonprofitBadge: "Non-profit organization - Ontario, Canada"
     },
     siteData: {
       slogan: "Discovering your identity, building your future.",
@@ -556,7 +556,7 @@ export const translations = {
       customAmountLabel: "Or custom amount",
       customAmountPlaceholder: "E.g. 75",
       currency: "CAD",
-      payButton: "Secure payment — coming soon",
+      payButton: "Secure payment - coming soon",
       payNote1: "The online payment form (Stripe / PayPal) is currently being integrated.",
       payNote2Prefix: "In the meantime, contact us via the ",
       payNote2Link: "Contact",
@@ -632,7 +632,7 @@ export const translations = {
         {
           heading: "Cookies and tracking",
           body:
-            "This site does not use any tracking cookies, analytics, or third-party advertising tools. The only information stored locally is your display language preference (French or English), saved in your browser's local storage — it stays on your device and is never sent to our servers."
+            "This site does not use any tracking cookies, analytics, or third-party advertising tools. The only information stored locally is your display language preference (French or English), saved in your browser's local storage - it stays on your device and is never sent to our servers."
         },
         {
           heading: "Your rights",

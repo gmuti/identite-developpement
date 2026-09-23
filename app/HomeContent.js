@@ -70,7 +70,7 @@ export default function HomeContent({ news }) {
         </div>
       </section>
 
-      {/* VALEURS — marquee */}
+      {/* VALEURS - marquee */}
       <section className="bg-cream px-6 py-20 sm:px-12">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 import { SITE_URL, ORG_NAME, SITE_DESCRIPTION } from "@/lib/seo";
 
-// Polices auto-hébergées (public/fonts) — évite une dépendance réseau vers
+// Polices auto-hébergées (public/fonts) - évite une dépendance réseau vers
 // fonts.googleapis.com au moment du build, qui s'est révélée intermittente sur CI.
 const fraunces = localFont({
   src: "../public/fonts/Fraunces-Variable.woff2",
@@ -22,8 +22,8 @@ const publicSans = localFont({
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${ORG_NAME} — Découvrir son identité, bâtir son avenir`,
-    template: `%s — ${ORG_NAME}`
+    default: `${ORG_NAME} - Découvrir son identité, bâtir son avenir`,
+    template: `%s - ${ORG_NAME}`
   },
   description: SITE_DESCRIPTION,
   keywords: [
@@ -49,7 +49,7 @@ export const metadata = {
     type: "website",
     url: SITE_URL,
     siteName: ORG_NAME,
-    title: `${ORG_NAME} — Découvrir son identité, bâtir son avenir`,
+    title: `${ORG_NAME} - Découvrir son identité, bâtir son avenir`,
     description: SITE_DESCRIPTION,
     locale: "fr_CA",
     alternateLocale: "en_CA",
@@ -57,7 +57,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${ORG_NAME} — Découvrir son identité, bâtir son avenir`,
+    title: `${ORG_NAME} - Découvrir son identité, bâtir son avenir`,
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"]
   }
