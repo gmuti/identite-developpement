@@ -22,7 +22,12 @@ export const translations = {
       donate: "Faire un don"
     },
     footer: {
-      rights: (year) => `© ${year} Identité et Développement. Ontario, Canada.`
+      rights: (year) => `© ${year} Identité et Développement. Ontario, Canada.`,
+      navHeading: "Navigation",
+      legalHeading: "Légal",
+      contactHeading: "Coordonnées",
+      followHeading: "Suivez-nous",
+      nonprofitBadge: "Organisme à but non lucratif — Ontario, Canada"
     },
     siteData: {
       slogan: "Découvrir son identité, bâtir son avenir.",
@@ -343,7 +348,12 @@ export const translations = {
       donate: "Donate"
     },
     footer: {
-      rights: (year) => `© ${year} Identité et Développement. Ontario, Canada.`
+      rights: (year) => `© ${year} Identité et Développement. Ontario, Canada.`,
+      navHeading: "Navigation",
+      legalHeading: "Legal",
+      contactHeading: "Contact",
+      followHeading: "Follow us",
+      nonprofitBadge: "Non-profit organization — Ontario, Canada"
     },
     siteData: {
       slogan: "Discovering your identity, building your future.",

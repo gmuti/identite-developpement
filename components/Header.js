@@ -20,6 +20,11 @@ export default function Header() {
     { href: "/contact", label: t.nav.contact }
   ];
 
+  // next.config.mjs a trailingSlash:true, donc usePathname() renvoie "/a-propos/"
+  // alors que les href ci-dessus n'ont pas de slash final — on normalise avant de comparer.
+  const withoutTrailingSlash = (p) => (p.length > 1 ? p.replace(/\/$/, "") : p);
+  const isActive = (href) => withoutTrailingSlash(pathname) === withoutTrailingSlash(href);
+
   return (
     <header className="sticky top-0 z-20 w-full border-b border-line/70 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 sm:px-12">
@@ -33,13 +38,13 @@ export default function Header() {
               key={item.href}
               href={item.href}
               className={`group relative pb-1.5 text-[13.5px] font-medium transition-colors ${
-                pathname === item.href ? "text-navy" : "text-ink hover:text-ink"
+                isActive(item.href) ? "text-navy" : "text-ink hover:text-ink"
               }`}
             >
               {item.label}
               <span
                 className={`absolute bottom-0 left-0 h-0.5 bg-gold transition-all duration-200 ${
-                  pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                  isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
             </Link>
@@ -84,7 +89,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`text-[15px] font-medium ${pathname === item.href ? "text-navy" : "text-ink"}`}
+                className={`text-[15px] font-medium ${isActive(item.href) ? "text-navy" : "text-ink"}`}
               >
                 {item.label}
               </Link>
