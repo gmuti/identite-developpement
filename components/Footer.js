@@ -17,7 +17,6 @@ export default function Footer() {
   const { contactInfo } = t.siteData;
 
   const navLinks = [
-    { href: "/", label: t.nav.home },
     { href: "/a-propos", label: t.nav.about },
     { href: "/departements", label: t.nav.departments },
     { href: "/projets", label: t.nav.projects },
@@ -32,27 +31,27 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-navy-dark px-6 pb-8 pt-16 sm:px-12">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-10 sm:grid-cols-2 md:grid-cols-[1.6fr_1fr_1fr_1.2fr]">
+    <footer className="w-full bg-navy-dark px-6 pb-6 pt-10 sm:px-12">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 md:grid-cols-[1.6fr_1fr_1fr_1.2fr]">
         <div>
-          <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/favicon.png" alt={t.nav.orgName} width={32} height={32} />
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/favicon.png" alt={t.nav.orgName} width={28} height={28} />
             <span className="font-display text-[15px] text-white">{t.nav.orgName}</span>
           </Link>
-          <p className="mt-4 max-w-xs text-[13px] leading-relaxed text-[#9FB3BF]">{t.siteData.slogan}</p>
-          <span className="mt-4 inline-block rounded-full border border-white/10 px-3 py-1 text-[11px] font-semibold text-gold">
+          <p className="mt-2.5 max-w-xs text-[13px] leading-relaxed text-[#9FB3BF]">{t.siteData.slogan}</p>
+          <span className="mt-3 inline-block rounded-full border border-white/10 px-3 py-1 text-[11px] font-semibold text-gold">
             {t.footer.nonprofitBadge}
           </span>
 
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-4 flex items-center gap-2.5">
             {SOCIAL_LINKS.map(({ name, href, Icon }) => (
               <a
                 key={name}
                 href={href}
                 aria-label={name}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-[#9FB3BF] transition-colors hover:border-gold/40 hover:text-gold"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-[#9FB3BF] transition-colors hover:border-gold/40 hover:text-gold"
               >
-                <Icon className="h-4 w-4" />
+                <Icon className="h-3.5 w-3.5" />
               </a>
             ))}
           </div>
@@ -60,7 +59,7 @@ export default function Footer() {
 
         <div>
           <span className="text-[11px] font-bold uppercase tracking-wide text-gold">{t.footer.navHeading}</span>
-          <ul className="mt-4 flex flex-col gap-3">
+          <ul className="mt-3 flex flex-col gap-2">
             {navLinks.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="text-[13px] text-[#9FB3BF] transition-colors hover:text-white">
@@ -73,7 +72,7 @@ export default function Footer() {
 
         <div>
           <span className="text-[11px] font-bold uppercase tracking-wide text-gold">{t.footer.legalHeading}</span>
-          <ul className="mt-4 flex flex-col gap-3">
+          <ul className="mt-3 flex flex-col gap-2">
             {legalLinks.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="text-[13px] text-[#9FB3BF] transition-colors hover:text-white">
@@ -86,7 +85,7 @@ export default function Footer() {
 
         <div>
           <span className="text-[11px] font-bold uppercase tracking-wide text-gold">{t.footer.contactHeading}</span>
-          <ul className="mt-4 flex flex-col gap-2.5">
+          <ul className="mt-3 flex flex-col gap-2">
             <li className="text-[13px] leading-relaxed text-[#9FB3BF]">{contactInfo.email}</li>
             <li className="text-[13px] leading-relaxed text-[#9FB3BF]">{contactInfo.phone}</li>
             <li className="text-[13px] leading-relaxed text-[#9FB3BF]">{contactInfo.address}</li>
@@ -94,7 +93,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-7xl border-t border-white/5 pt-6">
+      <div className="mx-auto mt-8 max-w-7xl border-t border-white/5 pt-5">
         <span className="text-xs text-[#7C93A0]">{t.footer.rights(new Date().getFullYear())}</span>
       </div>
     </footer>
