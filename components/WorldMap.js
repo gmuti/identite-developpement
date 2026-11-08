@@ -68,7 +68,7 @@ export default function WorldMap({ presence, locale, labels }) {
             </li>
           ))}
         </ul>
-        {selected && (
+        {selected && selected.activities[locale].length > 0 && (
           <div aria-live="polite" className="mt-4">
             <ul className="flex flex-col gap-1 text-sm leading-relaxed text-on-navy">
               {selected.activities[locale].map((a) => (

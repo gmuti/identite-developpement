@@ -10,7 +10,17 @@ import { geoEqualEarth, geoPath } from "d3-geo";
 
 const out = process.argv[2];
 const topo = JSON.parse(fs.readFileSync(new URL("./node_modules/world-atlas/countries-110m.json", import.meta.url)));
-const countries = feature(topo, topo.objects.countries).features.filter((f) => f.properties.name !== "Antarctica");
+const countries = feature(topo, topo.objects.countries)
+  .features.filter((f) => f.properties.name !== "Antarctica")
+  .map(europeanFranceOnly);
+
+// Dans Natural Earth, la France inclut la Guyane : on ne garde que les polygones européens
+// (métropole + Corse), sinon la colorer marquerait aussi l'Amérique du Sud.
+function europeanFranceOnly(f) {
+  if (f.properties.name !== "France" || f.geometry.type !== "MultiPolygon") return f;
+  const coordinates = f.geometry.coordinates.filter((poly) => poly[0].every(([lon]) => lon > -10));
+  return { ...f, geometry: { ...f.geometry, coordinates } };
+}
 
 const WIDTH = 1000;
 const projection = geoEqualEarth().fitWidth(WIDTH, { type: "FeatureCollection", features: countries });
