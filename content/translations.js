@@ -246,7 +246,8 @@ export const translations = {
               role: "Fondateur · Président",
               description: "Gardien de la vision depuis la fondation de l'organisation.",
               photo: "/images/membres/olivier2.jpeg",
-              photoPosition: "center 30%"
+              photoPosition: "center 30%",
+              photoZoom: 1.2
             },
             {
               initials: "GL",
@@ -254,7 +255,8 @@ export const translations = {
               role: "Cofondatrice · Secrétaire",
               description: "Aux côtés du fondateur depuis les premiers jours, elle incarne l'engagement communautaire au cœur de la mission.",
               photo: "/images/membres/germaine.jpeg",
-              photoPosition: "center 30%"
+              photoPosition: "center 30%",
+              photoZoom: 1.2
             }
           ]
         },
@@ -281,7 +283,8 @@ export const translations = {
               initials: "GM",
               name: "Gedeon Mutikanga Ruvuguta",
               role: "Responsable du service Informatique et développement web",
-              photo: "/images/membres/gedeon.png"
+              photo: "/images/membres/gedeon.png",
+              photoPosition: "center 0%"
             }
           ]
         }
@@ -716,7 +719,8 @@ export const translations = {
               role: "Founder · President",
               description: "Guardian of the vision since the organization's founding.",
               photo: "/images/membres/olivier2.jpeg",
-              photoPosition: "center 30%"
+              photoPosition: "center 30%",
+              photoZoom: 1.2
             },
             {
               initials: "GL",
@@ -724,7 +728,8 @@ export const translations = {
               role: "Co-founder · Secretary",
               description: "Alongside the founder from the very first days, she embodies the community commitment at the heart of the mission.",
               photo: "/images/membres/germaine.jpeg",
-              photoPosition: "center 30%"
+              photoPosition: "center 30%",
+              photoZoom: 1.2
             }
           ]
         },
@@ -751,7 +756,8 @@ export const translations = {
               initials: "GM",
               name: "Gedeon Mutikanga Ruvuguta",
               role: "Head of IT and Web Development",
-              photo: "/images/membres/gedeon.png"
+              photo: "/images/membres/gedeon.png",
+              photoPosition: "center 0%"
             }
           ]
         }

@@ -7,16 +7,16 @@ const TONES = [
   "bg-sand text-navy"
 ];
 
-// Carte d'un membre : portrait en forme de « D » (comme le logo), ou initiales en attendant la photo.
+// Carte d'un membre : portrait aux coins arrondis, ou initiales en attendant la photo.
 // Aucune biographie n'est inventée : la description n'apparaît que si elle est fournie.
 export default function MemberCard({ member, index = 0 }) {
   return (
     <article className="flex flex-col">
-      <div className={`shape-d relative aspect-[4/5] w-full overflow-hidden ${member.photo ? "bg-sand" : TONES[index % TONES.length]}`}>
+      <div className={`relative aspect-[4/5] w-full overflow-hidden rounded-4xl ${member.photo ? "bg-sand" : TONES[index % TONES.length]}`}>
         {member.photo ? (
-          <Image src={member.photo} alt={member.name} fill sizes="(min-width: 1024px) 260px, 50vw" className="object-cover" style={member.photoPosition ? { objectPosition: member.photoPosition } : undefined} />
+          <Image src={member.photo} alt={member.name} fill sizes="(min-width: 1024px) 260px, 50vw" className="object-cover" style={{ objectPosition: member.photoPosition, transform: member.photoZoom ? `scale(${member.photoZoom})` : undefined, transformOrigin: member.photoPosition }} />
         ) : (
-          <div aria-hidden="true" className="flex h-full w-full items-center justify-center pr-[8%]">
+          <div aria-hidden="true" className="flex h-full w-full items-center justify-center">
             <span className="text-4xl font-extrabold tracking-tight sm:text-5xl">{member.initials}</span>
           </div>
         )}

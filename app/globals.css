@@ -82,7 +82,8 @@ html {
 
   /* Forme « D » du logo : côté gauche droit, côté droit en demi-cercle */
   .shape-d {
-    @apply rounded-r-full;
+    /* Ancienne forme « D » remplacée le 2026-11-08 par un rectangle aux coins arrondis */
+    @apply rounded-4xl;
   }
 
   .field {

@@ -69,7 +69,7 @@ export function NewsListItem({ item }) {
   return (
     <Link href={`/actualites/${item.slug}/`} className={`group flex items-center gap-4 py-5 ${focusRing}`}>
       {imageUrl && (
-        <div className="shape-d relative aspect-square w-20 flex-shrink-0 overflow-hidden bg-sand sm:w-24">
+        <div className="relative aspect-square w-20 rounded-2xl flex-shrink-0 overflow-hidden bg-sand sm:w-24">
           <Image src={imageUrl} alt="" fill sizes="96px" className="object-cover" />
         </div>
       )}
