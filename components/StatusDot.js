@@ -1,9 +1,14 @@
-// Statut d'un département : pastille + texte discret, sans badge coloré.
+// Statut d'un département, en pastille : « Actif » en or, « En préparation » en contour discret.
 export default function StatusDot({ tone, label, onDark = false }) {
-  const dot = tone === "active" ? (onDark ? "bg-success-on-dark" : "bg-success") : "bg-gold";
+  if (tone === "active") {
+    return <span className="inline-flex flex-shrink-0 items-center rounded-full bg-gold px-3.5 py-1.5 text-[13px] font-bold text-navy-dark">{label}</span>;
+  }
   return (
-    <span className={`inline-flex flex-shrink-0 items-center gap-2 text-xs font-medium ${onDark ? "text-on-navy" : "text-muted"}`}>
-      <span aria-hidden="true" className={`h-2 w-2 rounded-full ${dot}`} />
+    <span
+      className={`inline-flex flex-shrink-0 items-center rounded-full border px-3.5 py-1.5 text-[13px] font-semibold ${
+        onDark ? "border-white/25 text-on-navy" : "border-line text-muted"
+      }`}
+    >
       {label}
     </span>
   );

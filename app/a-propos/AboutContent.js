@@ -5,7 +5,6 @@ import MemberCard from "@/components/MemberCard";
 import PageHeader from "@/components/PageHeader";
 import Photo from "@/components/Photo";
 import SectionHeading from "@/components/SectionHeading";
-import CheckIcon from "@/components/icons/CheckIcon";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function AboutContent() {
@@ -17,51 +16,52 @@ export default function AboutContent() {
     <>
       <PageHeader crumbLabel={t.about.crumb} title={t.about.title} description={t.siteData.slogan} />
 
-      {/* VISION / MISSION, à côté d'une image de la dimension spirituelle de l'accompagnement */}
-      <section className="bg-cream px-6 pb-20 sm:px-12">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
-          <Photo id="bible" imgClassName="aspect-[16/10] lg:aspect-[4/5]" sizes="(min-width: 1024px) 420px, 100vw" />
-          <div className="flex flex-col justify-center">
-            <span className="eyebrow">{t.about.raisonEyebrow}</span>
-            <h2 className="section-title mt-2">{t.about.visionMissionTitle}</h2>
-            <dl className="mt-10 flex flex-col gap-8">
-              <div className="border-l-2 border-gold pl-6">
-                <dt className="text-sm font-medium text-gold-dark">{t.about.visionLabel}</dt>
-                <dd className="mt-2 font-display text-2xl leading-snug text-navy">{vision}</dd>
+      {/* VISION / MISSION */}
+      <section className="bg-cream py-20 sm:py-28">
+        <div className="container-site grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <Photo id="bible" shape="d" imgClassName="aspect-[4/3] lg:aspect-[4/5]" sizes="(min-width: 1024px) 360px, 100vw" />
+          </div>
+          <div className="flex flex-col justify-center lg:col-span-7 lg:col-start-6">
+            <p className="eyebrow">{t.about.raisonEyebrow}</p>
+            <h2 className="h-section mt-2 text-navy">{t.about.visionMissionTitle}</h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-3xl bg-navy p-6 text-white sm:p-7">
+                <p className="text-sm font-bold text-gold">{t.about.visionLabel}</p>
+                <p className="mt-3 text-lg font-bold leading-snug">{vision}</p>
               </div>
-              <div className="border-l-2 border-navy pl-6">
-                <dt className="text-sm font-medium text-gold-dark">{t.about.missionLabel}</dt>
-                <dd className="mt-2 text-lg leading-relaxed text-ink">{mission}</dd>
+              <div className="rounded-3xl border border-line bg-white p-6 sm:p-7">
+                <p className="text-sm font-bold text-gold-dark">{t.about.missionLabel}</p>
+                <p className="mt-3 leading-relaxed text-ink">{mission}</p>
               </div>
-            </dl>
+            </div>
           </div>
         </div>
       </section>
 
       {/* OBJECTIFS */}
-      <section className="bg-white px-6 py-20 sm:px-12">
-        <div className="mx-auto max-w-6xl">
+      <section className="bg-white py-20 sm:py-28">
+        <div className="container-site">
           <SectionHeading eyebrow={t.about.objectifsEyebrow} title={t.about.objectifsTitle} />
-          <ul className="grid border-t border-line md:grid-cols-2 md:gap-x-16">
+          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {objectifs.map((o, i) => (
-              <li key={i} className="flex items-start gap-3 border-b border-line py-4">
-                <CheckIcon className="mt-1 flex-shrink-0 text-gold-dark" />
-                <span className="leading-relaxed text-ink">{o}</span>
+              <li key={i} className="flex flex-col gap-6 rounded-3xl bg-cream p-6">
+                <span className="text-3xl font-black tabular-nums tracking-tight text-gold-dark">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-semibold leading-snug text-navy">{o}</span>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </section>
 
       {/* VALEURS */}
-      <section className="bg-cream px-6 py-20 sm:px-12">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading eyebrow={t.about.valuesEyebrow} title={t.about.valuesTitle} />
-          <ul className="grid grid-cols-2 border-t border-line sm:grid-cols-4">
-            {values.map((v, i) => (
-              <li key={v} className="flex items-baseline gap-3 border-b border-line py-5 pr-4">
-                <span className="font-display text-sm tabular-nums text-gold-dark">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-base font-medium text-ink">{v}</span>
+      <section className="bg-navy py-20 text-white sm:py-24">
+        <div className="container-site">
+          <SectionHeading eyebrow={t.about.valuesEyebrow} title={t.about.valuesTitle} onDark />
+          <ul className="flex flex-wrap gap-3">
+            {values.map((v) => (
+              <li key={v} className="rounded-full border border-white/20 px-5 py-3 text-lg font-bold sm:text-xl">
+                {v}
               </li>
             ))}
           </ul>
@@ -69,20 +69,20 @@ export default function AboutContent() {
       </section>
 
       {/* FONDATEURS */}
-      <section className="bg-white px-6 py-20 sm:px-12">
-        <div className="mx-auto max-w-6xl">
+      <section className="bg-cream py-20 sm:py-28">
+        <div className="container-site">
           <SectionHeading
             eyebrow={t.about.foundersEyebrow}
             title={t.about.foundersTitle}
             action={
-              <Link href="/equipe/" className="text-sm font-medium text-navy transition-colors hover:text-gold-dark">
+              <Link href="/equipe/" className="link-underline">
                 {t.about.teamLink} <span aria-hidden="true">→</span>
               </Link>
             }
           />
-          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
-            {fondateurs.map((f) => (
-              <MemberCard key={f.name} member={f} />
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 lg:grid-cols-4">
+            {fondateurs.map((f, i) => (
+              <MemberCard key={f.name} member={f} index={i} />
             ))}
           </div>
         </div>

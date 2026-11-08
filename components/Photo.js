@@ -5,14 +5,15 @@ import { PHOTOS } from "@/lib/photos";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 // Photo d'illustration libre de droits, avec le crédit exigé par sa licence.
-export default function Photo({ id, className = "", imgClassName = "", sizes = "100vw", priority = false, onDark = false }) {
+// shape="d" : découpe en forme de « D » comme le logo ; sinon coins arrondis.
+export default function Photo({ id, className = "", imgClassName = "", shape = "rounded", sizes = "100vw", priority = false, onDark = false }) {
   const { locale } = useLanguage();
   const photo = PHOTOS[id];
   if (!photo) return null;
 
   return (
     <figure className={className}>
-      <div className={`relative overflow-hidden rounded-xl bg-line ${imgClassName}`}>
+      <div className={`relative overflow-hidden bg-sand ${shape === "d" ? "shape-d" : "rounded-4xl"} ${imgClassName}`}>
         <Image src={photo.src} alt={photo.alt[locale]} fill sizes={sizes} priority={priority} className="object-cover" />
       </div>
       <figcaption className={`mt-2 text-xs ${onDark ? "text-on-navy-faint" : "text-muted"}`}>

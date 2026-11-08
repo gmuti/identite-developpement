@@ -33,12 +33,12 @@ function renderBlock(block) {
   const children = renderSpans(block);
   switch (block.style) {
     case "h2":
-      return <h2 className="mt-10 font-display text-2xl text-navy">{children}</h2>;
+      return <h2 className="mt-10 text-2xl font-extrabold tracking-tight text-navy">{children}</h2>;
     case "h3":
-      return <h3 className="mt-8 text-lg font-medium text-ink">{children}</h3>;
+      return <h3 className="mt-8 text-xl font-bold text-navy">{children}</h3>;
     case "blockquote":
       return (
-        <blockquote className="my-8 border-l-2 border-gold pl-5 font-display text-xl leading-relaxed text-navy">
+        <blockquote className="my-8 rounded-3xl bg-navy p-6 text-xl font-bold leading-relaxed text-white">
           {children}
         </blockquote>
       );

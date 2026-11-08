@@ -8,16 +8,11 @@ import { SITE_URL, ORG_NAME, ORG_ACRONYM, SITE_DESCRIPTION } from "@/lib/seo";
 
 // Polices auto-hébergées (public/fonts) - évite une dépendance réseau vers
 // fonts.googleapis.com au moment du build, qui s'est révélée intermittente sur CI.
-const fraunces = localFont({
-  src: "../public/fonts/Fraunces-Variable.woff2",
-  weight: "400 700",
-  variable: "--font-fraunces"
-});
-
-const publicSans = localFont({
-  src: "../public/fonts/PublicSans-Variable.woff2",
-  weight: "400 700",
-  variable: "--font-public-sans"
+const figtree = localFont({
+  src: "../public/fonts/Figtree-Variable.woff2",
+  weight: "300 900",
+  variable: "--font-figtree",
+  display: "swap"
 });
 
 export const metadata = {
@@ -88,7 +83,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${fraunces.variable} ${publicSans.variable}`}>
+    <html lang="fr" className={figtree.variable}>
       <head>
         <script
           type="application/ld+json"

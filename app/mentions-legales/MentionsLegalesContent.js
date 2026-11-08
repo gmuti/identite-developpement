@@ -10,10 +10,10 @@ export default function MentionsLegalesContent() {
   return (
     <LegalPageContent crumb={t.legal.crumb} title={t.legal.title} updated={t.legal.updated} sections={t.legal.sections}>
       {/* Crédits exigés par les licences Creative Commons des photos d'illustration */}
-      <div className="grid gap-3">
-        <h2 className="font-display text-2xl text-navy">{t.legal.photoCreditsHeading}</h2>
-        <p className="leading-relaxed text-ink">{t.legal.photoCreditsIntro}</p>
-        <ul className="rule-list mt-2 border-y border-line">
+      <div className="rounded-3xl border border-line bg-white p-6 sm:p-8">
+        <h2 className="text-xl font-extrabold tracking-tight text-navy sm:text-2xl">{t.legal.photoCreditsHeading}</h2>
+        <p className="mt-3 leading-relaxed text-ink">{t.legal.photoCreditsIntro}</p>
+        <ul className="rule-list mt-4 border-y border-line">
           {Object.values(PHOTOS).map((p) => (
             <li key={p.src} className="flex flex-col gap-1 py-3 text-sm sm:flex-row sm:justify-between sm:gap-6">
               <span className="text-ink">{p.alt[locale]}</span>

@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import PageHeader from "@/components/PageHeader";
 import PortableText from "@/components/PortableText";
 import PhotoGallery from "@/components/PhotoGallery";
 import NewsCard from "@/components/NewsCard";
-import RouteMark from "@/components/RouteMark";
 import SectionHeading from "@/components/SectionHeading";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { urlFor } from "@/lib/sanity";
@@ -19,85 +19,60 @@ export default function NewsArticleContent({ article, related }) {
 
   return (
     <>
-      {/* EN-TÊTE */}
-      <section className="bg-cream px-6 pb-10 pt-10 sm:px-12 sm:pt-14">
-        <div className="mx-auto max-w-3xl">
-          <nav aria-label={t.common.breadcrumb} className="reveal flex flex-wrap items-center gap-2 text-xs text-muted">
-            <Link href="/" className="transition-colors hover:text-navy">
-              {t.common.home}
-            </Link>
-            <span aria-hidden="true" className="text-gold-dark">
-              ›
-            </span>
-            <Link href="/actualites/" className="transition-colors hover:text-navy">
-              {t.news.crumb}
-            </Link>
-          </nav>
-          <div className="reveal mt-10 flex flex-wrap items-center gap-2 text-sm text-muted">
-            {article.tag && <span className="font-medium text-gold-dark">{article.tag}</span>}
-            {article.tag && <span aria-hidden="true">·</span>}
-            <time dateTime={article.date || undefined} className="tabular-nums">
-              {date}
-            </time>
-          </div>
-          <h1 className="reveal page-title mt-4" style={{ animationDelay: "0.05s" }}>
-            {article.title}
-          </h1>
-          {article.excerpt && (
-            <p className="reveal mt-6 text-xl leading-relaxed text-muted" style={{ animationDelay: "0.1s" }}>
-              {article.excerpt}
-            </p>
-          )}
-          <RouteMark tone="dark" className="mt-10" />
-        </div>
-      </section>
+      <PageHeader title={article.title} description={article.excerpt} crumbs={[{ label: t.news.crumb, href: "/actualites/" }]}>
+        <p className="reveal mt-6 flex flex-wrap items-center gap-2 text-sm text-on-navy-muted" style={{ animationDelay: "0.12s" }}>
+          {article.tag && <span className="rounded-full bg-gold px-3 py-1 font-bold text-navy-dark">{article.tag}</span>}
+          <time dateTime={article.date || undefined} className="tabular-nums">
+            {date}
+          </time>
+        </p>
+      </PageHeader>
 
-      {/* CORPS */}
-      <article className="bg-cream px-6 pb-20 sm:px-12">
+      <article className="bg-cream pb-20 pt-10 sm:pb-28 sm:pt-14">
         {heroUrl && (
-          <div className="mx-auto max-w-5xl">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-line">
+          <div className="container-site">
+            <div className="relative mx-auto aspect-[16/9] max-w-5xl overflow-hidden rounded-4xl bg-sand">
               <Image src={heroUrl} alt="" fill priority sizes="(min-width: 1024px) 1024px, 100vw" className="object-cover" />
             </div>
           </div>
         )}
 
-        <div className="mx-auto mt-6 max-w-3xl text-lg">
-          {hasBody ? <PortableText value={article.body} /> : <p className="mt-6 leading-relaxed text-muted">{t.news.bodySoon}</p>}
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl text-lg">
+            {hasBody ? <PortableText value={article.body} /> : <p className="mt-6 leading-relaxed text-muted">{t.news.bodySoon}</p>}
 
-          {article.gallery?.length > 0 && (
-            <section className="mt-16" aria-labelledby="gallery-title">
-              <h2 id="gallery-title" className="mb-6 font-display text-2xl text-navy">
-                {t.news.galleryTitle}
-              </h2>
-              <PhotoGallery
-                photos={article.gallery}
-                labels={{
-                  open: t.news.galleryOpen,
-                  viewer: t.news.galleryTitle,
-                  close: t.news.galleryClose,
-                  previous: t.news.galleryPrevious,
-                  next: t.news.galleryNext
-                }}
-              />
-            </section>
-          )}
+            {article.gallery?.length > 0 && (
+              <section className="mt-16" aria-labelledby="gallery-title">
+                <h2 id="gallery-title" className="mb-6 text-2xl font-extrabold tracking-tight text-navy">
+                  {t.news.galleryTitle}
+                </h2>
+                <PhotoGallery
+                  photos={article.gallery}
+                  labels={{
+                    open: t.news.galleryOpen,
+                    viewer: t.news.galleryTitle,
+                    close: t.news.galleryClose,
+                    previous: t.news.galleryPrevious,
+                    next: t.news.galleryNext
+                  }}
+                />
+              </section>
+            )}
 
-          <div className="mt-16 border-t border-line pt-6">
-            <Link href="/actualites/" className="text-sm font-medium text-navy transition-colors hover:text-gold-dark">
-              <span aria-hidden="true">← </span>
-              {t.news.backToNews}
-            </Link>
+            <div className="mt-14">
+              <Link href="/actualites/" className="btn btn-outline btn-sm">
+                <span aria-hidden="true">←</span> {t.news.backToNews}
+              </Link>
+            </div>
           </div>
         </div>
       </article>
 
-      {/* AUTRES ACTUALITÉS */}
       {related.length > 0 && (
-        <section className="bg-white px-6 py-20 sm:px-12">
-          <div className="mx-auto max-w-6xl">
+        <section className="bg-white py-20 sm:py-24">
+          <div className="container-site">
             <SectionHeading title={t.news.relatedTitle} />
-            <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((n) => (
                 <NewsCard key={n._id} item={n} showExcerpt={false} />
               ))}

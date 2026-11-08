@@ -2,20 +2,20 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-function LanguageToggle({ locale, onToggle, className = "" }) {
+function LanguageToggle({ locale, onToggle }) {
   return (
     <button
       type="button"
       onClick={onToggle}
       aria-label="Changer de langue / Switch language"
-      className={`rounded-lg border border-line px-3 py-2 text-xs font-medium text-muted transition-colors hover:border-navy/30 ${className}`}
+      className="rounded-full bg-cream px-4 py-2.5 text-[13px] font-bold text-muted transition-colors hover:bg-sand"
     >
       <span className={locale === "fr" ? "text-navy" : ""}>FR</span>
-      <span aria-hidden="true" className="mx-1 text-line">
+      <span aria-hidden="true" className="mx-1">
         /
       </span>
       <span className={locale === "en" ? "text-navy" : ""}>EN</span>
@@ -23,10 +23,14 @@ function LanguageToggle({ locale, onToggle, className = "" }) {
   );
 }
 
+// Barre de navigation flottante : une pilule blanche posée au-dessus du contenu.
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const { locale, toggleLocale, t } = useLanguage();
+
+  // Ferme le menu mobile à chaque changement de page
+  useEffect(() => setOpen(false), [pathname]);
 
   const nav = [
     { href: "/", label: t.nav.home },
@@ -38,9 +42,7 @@ export default function Header() {
     { href: "/contact", label: t.nav.contact }
   ];
 
-  // next.config.mjs a trailingSlash:true, donc usePathname() renvoie "/a-propos/"
-  // alors que les href ci-dessus n'ont pas de slash final - on normalise avant de comparer.
-  // Une sous-page (ex. /actualites/mon-article/) garde sa rubrique active.
+  // trailingSlash:true → usePathname() renvoie "/a-propos/" ; une sous-page garde sa rubrique active.
   const withoutTrailingSlash = (p) => (p.length > 1 ? p.replace(/\/$/, "") : p);
   const isActive = (href) => {
     const current = withoutTrailingSlash(pathname);
@@ -48,76 +50,70 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-20 w-full border-b border-line bg-cream/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 sm:px-12">
-        <Link href="/" className="flex items-center">
-          <Image src="/logo-full.png" alt={t.nav.orgName} width={106} height={40} className="h-10 w-auto" priority />
-        </Link>
-
-        <nav className="hidden items-center gap-6 xl:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isActive(item.href) ? "page" : undefined}
-              className={`group relative py-2 text-sm font-medium transition-colors ${
-                isActive(item.href) ? "text-navy" : "text-muted hover:text-ink"
-              }`}
-            >
-              {item.label}
-              <span
-                aria-hidden="true"
-                className={`absolute inset-x-0 bottom-0 h-0.5 origin-left bg-gold transition-transform duration-200 ease-out ${
-                  isActive(item.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden items-center gap-3 xl:flex">
-          <LanguageToggle locale={locale} onToggle={toggleLocale} />
-          <Link href="/don/" className="btn btn-primary btn-sm">
-            {t.nav.donate}
+    <header className="fixed inset-x-0 top-0 z-30 px-3 pt-3 sm:px-5 sm:pt-4">
+      <div className="mx-auto max-w-7xl rounded-[1.75rem] bg-white shadow-[0_8px_24px_rgba(4,17,29,0.10)] ring-1 ring-black/5">
+        <div className="flex items-center justify-between gap-4 py-2 pl-5 pr-2 sm:pl-6">
+          <Link href="/" className="flex flex-shrink-0 items-center" aria-label={t.nav.orgName}>
+            <Image src="/logo-full.png" alt={t.nav.orgName} width={106} height={40} className="h-9 w-auto sm:h-10" priority />
           </Link>
-        </div>
 
-        <button
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 xl:hidden"
-        >
-          <span className={`h-0.5 w-6 bg-navy transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
-          <span className={`h-0.5 w-6 bg-navy transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`h-0.5 w-6 bg-navy transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`} />
-        </button>
-      </div>
-
-      {open && (
-        <div id="mobile-menu" className="border-t border-line bg-white px-6 py-4 xl:hidden">
-          <nav className="flex flex-col">
+          <nav aria-label="Navigation principale" className="hidden items-center gap-1 xl:flex">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`border-b border-line/70 py-3 text-base font-medium ${isActive(item.href) ? "text-navy" : "text-ink"}`}
+                className={`rounded-full px-3.5 py-2 text-[15px] font-semibold transition-colors ${
+                  isActive(item.href) ? "bg-cream text-navy" : "text-muted hover:text-navy"
+                }`}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="mt-4 flex items-center gap-3">
-              <LanguageToggle locale={locale} onToggle={toggleLocale} />
-              <Link href="/don/" onClick={() => setOpen(false)} className="btn btn-primary flex-1">
-                {t.nav.donate}
-              </Link>
-            </div>
           </nav>
+
+          <div className="flex items-center gap-2">
+            <div className="hidden sm:block">
+              <LanguageToggle locale={locale} onToggle={toggleLocale} />
+            </div>
+            <Link href="/don/" className="btn btn-primary btn-sm">
+              {t.nav.donate}
+            </Link>
+            <button
+              type="button"
+              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen((v) => !v)}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-cream text-navy transition-colors hover:bg-sand xl:hidden"
+            >
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                {open ? <path d="M4 4l10 10M14 4L4 14" /> : <path d="M2 5h14M2 9h14M2 13h14" />}
+              </svg>
+            </button>
+          </div>
         </div>
-      )}
+
+        {open && (
+          <div id="mobile-menu" className="border-t border-line px-3 pb-4 pt-2 xl:hidden">
+            <nav aria-label="Navigation mobile" className="flex flex-col">
+              {nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={`rounded-2xl px-4 py-3 text-base font-semibold ${isActive(item.href) ? "bg-cream text-navy" : "text-ink"}`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="mt-2 px-1 sm:hidden">
+              <LanguageToggle locale={locale} onToggle={toggleLocale} />
+            </div>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
