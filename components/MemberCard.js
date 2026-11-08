@@ -14,7 +14,7 @@ export default function MemberCard({ member, index = 0 }) {
     <article className="flex flex-col">
       <div className={`shape-d relative aspect-[4/5] w-full overflow-hidden ${member.photo ? "bg-sand" : TONES[index % TONES.length]}`}>
         {member.photo ? (
-          <Image src={member.photo} alt={member.name} fill sizes="(min-width: 1024px) 260px, 50vw" className="object-cover" />
+          <Image src={member.photo} alt={member.name} fill sizes="(min-width: 1024px) 260px, 50vw" className="object-cover" style={member.photoPosition ? { objectPosition: member.photoPosition } : undefined} />
         ) : (
           <div aria-hidden="true" className="flex h-full w-full items-center justify-center pr-[8%]">
             <span className="text-4xl font-extrabold tracking-tight sm:text-5xl">{member.initials}</span>

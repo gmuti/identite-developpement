@@ -245,14 +245,16 @@ export const translations = {
               name: "Olivier Musanganya Lubambo",
               role: "Fondateur · Président",
               description: "Gardien de la vision depuis la fondation de l'organisation.",
-              photo: null
+              photo: "/images/membres/olivier2.jpeg",
+              photoPosition: "center 30%"
             },
             {
               initials: "GL",
               name: "Germaine Linda Mutikanga Basimine",
               role: "Cofondatrice · Secrétaire",
               description: "Aux côtés du fondateur depuis les premiers jours, elle incarne l'engagement communautaire au cœur de la mission.",
-              photo: null
+              photo: "/images/membres/germaine.jpeg",
+              photoPosition: "center 30%"
             }
           ]
         },
@@ -279,7 +281,7 @@ export const translations = {
               initials: "GM",
               name: "Gedeon Mutikanga Ruvuguta",
               role: "Responsable du service Informatique et développement web",
-              photo: null
+              photo: "/images/membres/gedeon.png"
             }
           ]
         }
@@ -713,14 +715,16 @@ export const translations = {
               name: "Olivier Musanganya Lubambo",
               role: "Founder · President",
               description: "Guardian of the vision since the organization's founding.",
-              photo: null
+              photo: "/images/membres/olivier2.jpeg",
+              photoPosition: "center 30%"
             },
             {
               initials: "GL",
               name: "Germaine Linda Mutikanga Basimine",
               role: "Co-founder · Secretary",
               description: "Alongside the founder from the very first days, she embodies the community commitment at the heart of the mission.",
-              photo: null
+              photo: "/images/membres/germaine.jpeg",
+              photoPosition: "center 30%"
             }
           ]
         },
@@ -747,7 +751,7 @@ export const translations = {
               initials: "GM",
               name: "Gedeon Mutikanga Ruvuguta",
               role: "Head of IT and Web Development",
-              photo: null
+              photo: "/images/membres/gedeon.png"
             }
           ]
         }
