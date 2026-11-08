@@ -206,7 +206,7 @@ export const translations = {
               initials: "GL",
               name: "Germaine Linda Mutikanga Basimine",
               role: "Cofondatrice · Secrétaire",
-              description: "À ses côtés depuis les premiers jours, elle incarne l'engagement communautaire au cœur de la mission.",
+              description: "Aux côtés du fondateur depuis les premiers jours, elle incarne l'engagement communautaire au cœur de la mission.",
               photo: null
             }
           ]
@@ -626,7 +626,7 @@ export const translations = {
               initials: "GL",
               name: "Germaine Linda Mutikanga Basimine",
               role: "Co-founder · Secretary",
-              description: "By his side from the very first days, she embodies the community commitment at the heart of the mission.",
+              description: "Alongside the founder from the very first days, she embodies the community commitment at the heart of the mission.",
               photo: null
             }
           ]
