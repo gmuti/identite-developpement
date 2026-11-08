@@ -5,18 +5,20 @@ import NewsCard from "@/components/NewsCard";
 import NewsletterBand from "@/components/NewsletterBand";
 import SectionHeading from "@/components/SectionHeading";
 import StatusDot from "@/components/StatusDot";
+import WorldMap from "@/components/WorldMap";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { MAP_PRESENCE } from "@/lib/mapPresence";
 
 export default function HomeContent({ news }) {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const { mission, values, departments } = t.siteData;
 
   return (
     <>
       {/* HERO */}
-      <section className="bg-navy px-6 py-20 sm:px-12 sm:py-28">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-2xl">
+      <section className="bg-navy px-6 py-16 sm:px-12 sm:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+          <div>
             <span className="reveal eyebrow-on-dark">{t.home.badge}</span>
             <h1 className="reveal mt-4 font-display text-4xl leading-tight text-white sm:text-5xl" style={{ animationDelay: "0.05s" }}>
               {t.home.titleLine1}
@@ -34,6 +36,14 @@ export default function HomeContent({ news }) {
                 {t.home.ctaMission}
               </Link>
             </div>
+          </div>
+
+          <div className="reveal" style={{ animationDelay: "0.2s" }}>
+            <WorldMap
+              presence={MAP_PRESENCE}
+              locale={locale}
+              labels={{ mapAlt: t.home.mapAlt, listTitle: t.home.mapListTitle }}
+            />
           </div>
         </div>
       </section>
