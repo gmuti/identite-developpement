@@ -7,18 +7,19 @@ export default function ContactContent() {
   const { t } = useLanguage();
   const { contactInfo } = t.siteData;
 
+  // Les coordonnées pas encore communiquées (null) ne sont pas affichées.
   const infoRows = [
     { label: t.contact.fieldEmail, value: contactInfo.email },
     { label: t.contact.fieldPhone, value: contactInfo.phone },
     { label: t.contact.fieldAddress, value: contactInfo.address }
-  ];
+  ].filter((r) => r.value);
 
   return (
     <>
       <PageHeader crumbLabel={t.contact.crumb} title={t.contact.title} description={t.contact.subtitle} />
 
-      <section className="bg-white px-6 py-20 sm:px-12">
-        <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-[1fr_1.4fr]">
+      <section className="bg-cream px-6 pb-24 sm:px-12">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:gap-16">
           {/* COORDONNEES */}
           <div>
             <span className="eyebrow">{t.contact.infoEyebrow}</span>
@@ -34,7 +35,7 @@ export default function ContactContent() {
           </div>
 
           {/* FORMULAIRE */}
-          <div className="rounded-xl border border-line bg-cream p-6 sm:p-8">
+          <div className="rounded-xl border border-line bg-white p-6 sm:p-8">
             <h2 className="mb-6 font-display text-xl text-navy">{t.contact.formTitle}</h2>
             <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
               <div className="grid gap-5 sm:grid-cols-2">
@@ -63,7 +64,7 @@ export default function ContactContent() {
                 </label>
                 <textarea id="message" rows={5} placeholder={t.contact.placeholderMessage} className="field resize-none" />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-navy btn-lg">
                 {t.contact.sendButton}
               </button>
               <p className="text-xs leading-relaxed text-muted">{t.contact.formNote(contactInfo.email)}</p>

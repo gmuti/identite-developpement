@@ -1,7 +1,7 @@
 "use client";
 
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import SectionHeading from "@/components/SectionHeading";
 import StatusDot from "@/components/StatusDot";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -11,26 +11,37 @@ export default function DepartmentsContent() {
 
   return (
     <>
-      <PageHeader crumbLabel={t.departments.crumb} title={t.departments.title} />
+      <PageHeader crumbLabel={t.departments.crumb} title={t.departments.title} description={t.departments.subtitle} />
 
-      <section className="bg-cream px-6 py-20 sm:px-12">
+      <section className="bg-cream px-6 pb-24 sm:px-12">
         <div className="mx-auto max-w-6xl">
-          <SectionHeading eyebrow={t.departments.eyebrow} title={t.departments.subtitle} />
-          <div className="grid gap-6 md:grid-cols-2">
-            {departments.map((d) => (
-              <div key={d.name} className="rounded-xl border border-line bg-white p-6 sm:p-8">
-                <StatusDot tone={d.tone} label={d.status} />
-                <h3 className="mt-3 text-lg font-medium leading-snug text-ink">{d.name}</h3>
-                <ul className="mt-4 flex flex-col gap-2 pl-5">
-                  {d.attributions.map((a, i) => (
-                    <li key={i} className="list-disc text-sm leading-relaxed text-muted marker:text-gold-dark">
+          <h2 className="sr-only">{t.departments.eyebrow}</h2>
+          <ol className="rule-list border-y border-line">
+            {departments.map((d, i) => (
+              <li key={d.name} className="grid gap-4 py-8 md:grid-cols-[4rem_minmax(0,5fr)_minmax(0,6fr)] md:gap-8">
+                <span className="font-display text-2xl tabular-nums text-gold-dark">{String(i + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3 className={`font-display text-2xl leading-snug ${d.tone === "active" ? "text-navy" : "text-ink"}`}>{d.name}</h3>
+                  <div className="mt-3">
+                    <StatusDot tone={d.tone} label={d.status} />
+                  </div>
+                  {d.tone === "active" && (
+                    <Link href="/equipe/#technologies-medias-communication" className="mt-4 inline-block text-sm font-medium text-navy transition-colors hover:text-gold-dark">
+                      {t.team.title} <span aria-hidden="true">→</span>
+                    </Link>
+                  )}
+                </div>
+                <ul className="flex flex-col gap-2 md:pt-2">
+                  {d.attributions.map((a, j) => (
+                    <li key={j} className="flex gap-3 leading-relaxed text-muted">
+                      <span aria-hidden="true" className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-gold-dark" />
                       {a}
                     </li>
                   ))}
                 </ul>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
     </>

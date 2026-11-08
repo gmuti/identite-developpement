@@ -2,21 +2,21 @@
 
 import PageHeader from "@/components/PageHeader";
 
-export default function LegalPageContent({ crumb, title, updated, sections }) {
+export default function LegalPageContent({ crumb, title, updated, sections, children = null }) {
   return (
     <>
-      <PageHeader crumbLabel={crumb} title={title} />
+      <PageHeader crumbLabel={crumb} title={title} description={updated} />
 
-      <section className="bg-white px-6 py-16 sm:px-12">
-        <div className="mx-auto max-w-3xl">
-          <p className="mb-10 text-sm text-muted">{updated}</p>
-          <div className="flex flex-col gap-10">
+      <section className="bg-cream px-6 pb-24 sm:px-12">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex max-w-3xl flex-col gap-12">
             {sections.map((s) => (
-              <div key={s.heading}>
-                <h2 className="mb-3 font-display text-2xl text-navy">{s.heading}</h2>
+              <div key={s.heading} className="grid gap-3">
+                <h2 className="font-display text-2xl text-navy">{s.heading}</h2>
                 <p className="leading-relaxed text-ink">{s.body}</p>
               </div>
             ))}
+            {children}
           </div>
         </div>
       </section>

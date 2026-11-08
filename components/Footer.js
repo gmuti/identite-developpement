@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { InstagramIcon, TiktokIcon, XIcon } from "@/components/icons/SocialIcons";
 import { ACTIVE_SOCIAL_PROFILES } from "@/lib/social";
+import RouteMark from "@/components/RouteMark";
 
 const SOCIAL_ICONS = { x: XIcon, tiktok: TiktokIcon, instagram: InstagramIcon };
 
@@ -93,15 +94,18 @@ export default function Footer() {
         <div>
           <span className="text-sm font-medium text-gold">{t.footer.contactHeading}</span>
           <ul className="mt-4 flex flex-col gap-2">
-            <li className="text-sm leading-relaxed text-on-navy-muted">{contactInfo.email}</li>
-            <li className="text-sm leading-relaxed text-on-navy-muted">{contactInfo.phone}</li>
-            <li className="text-sm leading-relaxed text-on-navy-muted">{contactInfo.address}</li>
+            {[contactInfo.email, contactInfo.phone, contactInfo.address].filter(Boolean).map((v) => (
+              <li key={v} className="text-sm leading-relaxed text-on-navy-muted">
+                {v}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
-      <div className="mx-auto mt-8 max-w-7xl border-t border-white/5 pt-5">
+      <div className="mx-auto mt-10 flex max-w-7xl items-center gap-4 border-t border-white/10 pt-5">
         <span className="text-xs text-on-navy-faint">{t.footer.rights(new Date().getFullYear())}</span>
+        <RouteMark className="ml-auto opacity-70" />
       </div>
     </footer>
   );

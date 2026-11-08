@@ -140,8 +140,9 @@ export const translations = {
         "Maintenir une conduite compatible avec nos valeurs."
       ],
       contactInfo: {
-        email: "[Adresse courriel à venir]",
-        phone: "[Téléphone à venir]",
+        // null tant que non communiqué : la ligne est alors masquée sur le site
+        email: null,
+        phone: null,
         address: "Ontario, Canada"
       }
     },
@@ -323,13 +324,17 @@ export const translations = {
       placeholderMessage: "Votre message",
       sendButton: "Envoyer le message",
       formNote: (email) =>
-        `L'envoi automatique des messages sera activé une fois notre service de messagerie connecté. En attendant, écrivez-nous directement à ${email}.`,
+        email
+          ? `L'envoi automatique des messages sera activé une fois notre service de messagerie connecté. En attendant, écrivez-nous directement à ${email}.`
+          : "L'envoi automatique des messages sera activé une fois notre service de messagerie connecté.",
       fieldEmail: "Courriel",
       fieldPhone: "Téléphone",
       fieldAddress: "Adresse"
     },
     legal: {
       crumb: "Mentions légales",
+      photoCreditsHeading: "Crédits photos",
+      photoCreditsIntro: "En attendant les photos propres à l'organisme, le site utilise des photos d'illustration sous licence libre publiées sur Wikimedia Commons sous licence Creative Commons. Elles ne représentent pas des activités de l'organisme.",
       title: "Mentions légales",
       updated: "Dernière mise à jour : 8 novembre 2026",
       sections: [
@@ -563,8 +568,8 @@ export const translations = {
         "Maintain conduct consistent with our values."
       ],
       contactInfo: {
-        email: "[Email address coming soon]",
-        phone: "[Phone number coming soon]",
+        email: null,
+        phone: null,
         address: "Ontario, Canada"
       }
     },
@@ -746,13 +751,17 @@ export const translations = {
       placeholderMessage: "Your message",
       sendButton: "Send message",
       formNote: (email) =>
-        `Automatic message delivery will be enabled once our messaging service is connected. In the meantime, email us directly at ${email}.`,
+        email
+          ? `Automatic message delivery will be enabled once our messaging service is connected. In the meantime, email us directly at ${email}.`
+          : "Automatic message delivery will be enabled once our messaging service is connected.",
       fieldEmail: "Email",
       fieldPhone: "Phone",
       fieldAddress: "Address"
     },
     legal: {
       crumb: "Legal Notice",
+      photoCreditsHeading: "Photo credits",
+      photoCreditsIntro: "Until the organization's own photos are available, the site uses freely licensed illustration photos published on Wikimedia Commons under Creative Commons licenses. They do not depict the organization's activities.",
       title: "Legal Notice",
       updated: "Last updated: November 8, 2026",
       sections: [

@@ -48,7 +48,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-20 w-full border-b border-line/70 bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-20 w-full border-b border-line bg-cream/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 sm:px-12">
         <Link href="/" className="flex items-center">
           <Image src="/logo-full.png" alt={t.nav.orgName} width={106} height={40} className="h-10 w-auto" priority />

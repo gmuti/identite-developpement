@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import SectionHeading from "@/components/SectionHeading";
+import Photo from "@/components/Photo";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function ProjectsContent() {
@@ -11,38 +11,46 @@ export default function ProjectsContent() {
 
   return (
     <>
-      <PageHeader crumbLabel={t.projects.crumb} title={t.projects.title} />
+      <PageHeader crumbLabel={t.projects.crumb} title={t.projects.title} description={t.projects.subtitle} />
 
-      <section className="bg-white px-6 py-20 sm:px-12">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading eyebrow={t.projects.eyebrow} title={t.projects.subtitle} />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {axes.map((ax, i) => (
-              <div key={ax.title} className="rounded-xl border border-line bg-cream p-6">
-                <span className="font-display text-sm tabular-nums text-gold-dark">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mb-3 mt-2 text-lg font-medium leading-snug text-ink">{ax.title}</h3>
-                <ul className="flex flex-col gap-2 pl-5">
-                  {ax.items.map((it, j) => (
-                    <li key={j} className="list-disc text-sm leading-relaxed text-muted marker:text-gold-dark">
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-gold px-6 py-12 sm:px-12">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <section className="bg-cream px-6 pb-24 sm:px-12">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
+          {/* L'image reste visible pendant la lecture des axes sur grand écran */}
           <div>
-            <h2 className="font-display text-2xl text-navy-dark">{t.projects.ctaTitle}</h2>
-            <p className="mt-2 text-sm text-on-gold">{t.projects.ctaText}</p>
+            <Photo id="ecole" className="lg:sticky lg:top-24" imgClassName="aspect-[16/10] lg:aspect-[4/5]" sizes="(min-width: 1024px) 360px, 100vw" />
           </div>
-          <Link href="/don/" className="btn btn-navy self-start md:self-auto">
-            {t.projects.ctaButton}
-          </Link>
+
+          <div>
+            <h2 className="sr-only">{t.projects.eyebrow}</h2>
+            <ol className="rule-list border-y border-line">
+              {axes.map((ax, i) => (
+                <li key={ax.title} className="grid gap-3 py-8 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-6">
+                  <span className="font-display text-2xl tabular-nums text-gold-dark">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3 className="font-display text-2xl leading-snug text-navy">{ax.title}</h3>
+                    <ul className="mt-3 flex flex-col gap-2">
+                      {ax.items.map((it, j) => (
+                        <li key={j} className="flex gap-3 leading-relaxed text-muted">
+                          <span aria-hidden="true" className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-gold-dark" />
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-12 flex flex-col gap-6 rounded-xl bg-navy p-8 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="font-display text-2xl text-white">{t.projects.ctaTitle}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-on-navy">{t.projects.ctaText}</p>
+              </div>
+              <Link href="/don/" className="btn btn-primary flex-shrink-0 self-start sm:self-auto">
+                {t.projects.ctaButton}
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
