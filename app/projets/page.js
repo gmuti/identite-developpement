@@ -3,7 +3,7 @@ import ProjectsContent from "./ProjectsContent";
 export const metadata = {
   title: "Nos projets",
   description:
-    "Les six axes d'intervention d'Identité et Développement : éducation, aide humanitaire, développement communautaire et plus encore.",
+    "Les six axes d'intervention d'Identité et Développement Global : éducation, aide humanitaire, développement communautaire et plus encore.",
   alternates: { canonical: "/projets/" }
 };
 

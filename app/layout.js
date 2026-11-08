@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
-import { SITE_URL, ORG_NAME, SITE_DESCRIPTION } from "@/lib/seo";
+import { SITE_URL, ORG_NAME, ORG_ACRONYM, SITE_DESCRIPTION } from "@/lib/seo";
 
 // Polices auto-hébergées (public/fonts) - évite une dépendance réseau vers
 // fonts.googleapis.com au moment du build, qui s'est révélée intermittente sur CI.
@@ -27,7 +27,8 @@ export const metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "Identité et Développement",
+    "Identité et Développement Global",
+    "IDG",
     "organisme à but non lucratif",
     "Ontario",
     "Canada",
@@ -71,6 +72,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "NGO",
   name: ORG_NAME,
+  alternateName: ORG_ACRONYM,
   url: SITE_URL,
   logo: `${SITE_URL}/logo-full.png`,
   description: SITE_DESCRIPTION,

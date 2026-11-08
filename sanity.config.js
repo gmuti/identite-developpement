@@ -8,7 +8,7 @@ const dataset = process.env.SANITY_STUDIO_DATASET || process.env.NEXT_PUBLIC_SAN
 
 export default defineConfig({
   name: "default",
-  title: "Identité et Développement",
+  title: "Identité et Développement Global",
   projectId,
   dataset,
   plugins: [structureTool(), visionTool()],

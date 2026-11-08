@@ -4,7 +4,7 @@ import { getNews, getEvents } from "@/lib/sanity";
 export const metadata = {
   title: "Actualités & événements",
   description:
-    "Suivez les dernières nouvelles, conférences et formations d'Identité et Développement, organisme à but non lucratif en Ontario, Canada.",
+    "Suivez les dernières nouvelles, conférences et formations d'Identité et Développement Global, organisme à but non lucratif en Ontario, Canada.",
   alternates: { canonical: "/actualites/" }
 };
 

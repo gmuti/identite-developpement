@@ -1,4 +1,4 @@
-# Identité et Développement - Site web
+# Identité et Développement Global - Site web
 
 ## État actuel
 Projet Next.js 14 (App Router) + Tailwind, export statique, avec la charte
