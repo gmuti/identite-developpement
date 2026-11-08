@@ -29,6 +29,7 @@ export const translations = {
       legalHeading: "Légal",
       contactHeading: "Coordonnées",
       followHeading: "Suivez-nous",
+      newTab: "s’ouvre dans un nouvel onglet",
       nonprofitBadge: "Organisme à but non lucratif - Ontario, Canada"
     },
     siteData: {
@@ -454,6 +455,7 @@ export const translations = {
       legalHeading: "Legal",
       contactHeading: "Contact",
       followHeading: "Follow us",
+      newTab: "opens in a new tab",
       nonprofitBadge: "Non-profit organization - Ontario, Canada"
     },
     siteData: {

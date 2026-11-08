@@ -3,14 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from "@/components/icons/SocialIcons";
+import { InstagramIcon, TiktokIcon, XIcon } from "@/components/icons/SocialIcons";
+import { ACTIVE_SOCIAL_PROFILES } from "@/lib/social";
 
-const SOCIAL_LINKS = [
-  { name: "Facebook", href: "#", Icon: FacebookIcon },
-  { name: "Instagram", href: "#", Icon: InstagramIcon },
-  { name: "LinkedIn", href: "#", Icon: LinkedinIcon },
-  { name: "YouTube", href: "#", Icon: YoutubeIcon }
-];
+const SOCIAL_ICONS = { x: XIcon, tiktok: TiktokIcon, instagram: InstagramIcon };
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -45,18 +41,27 @@ export default function Footer() {
             {t.footer.nonprofitBadge}
           </span>
 
-          <div className="mt-4 flex items-center gap-2">
-            {SOCIAL_LINKS.map(({ name, href, Icon }) => (
-              <a
-                key={name}
-                href={href}
-                aria-label={name}
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-on-navy-muted transition-colors hover:border-gold/40 hover:text-gold"
-              >
-                <Icon className="h-3.5 w-3.5" />
-              </a>
-            ))}
-          </div>
+          {/* Seuls les profils dont l'URL est renseignée dans lib/social.js sont affichés */}
+          {ACTIVE_SOCIAL_PROFILES.length > 0 && (
+            <ul className="mt-4 flex items-center gap-2" aria-label={t.footer.followHeading}>
+              {ACTIVE_SOCIAL_PROFILES.map(({ id, name, url }) => {
+                const Icon = SOCIAL_ICONS[id];
+                return (
+                  <li key={id}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${name} (${t.footer.newTab})`}
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-on-navy-muted transition-colors hover:border-gold/40 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
 
         <div>

@@ -1,44 +1,28 @@
-// Icônes de réseaux sociaux minimalistes (traits simples, héritent de la couleur du texte).
-// Les liens sont des espaces réservés ("#") en attendant les URLs réelles des profils.
+// Icônes des réseaux sociaux de l'organisme (héritent de la couleur du texte).
+// Tracés X et TikTok : Simple Icons (licence CC0).
 
-export function FacebookIcon(props) {
+export function XIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
-      <path
-        d="M15 8.5h-2a1.5 1.5 0 0 0-1.5 1.5v2h3.5l-.5 3H11.5v7h-3v-7H7v-3h1.5v-2A4 4 0 0 1 12.5 5H15v3.5Z"
-        strokeLinejoin="round"
-      />
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+    </svg>
+  );
+}
+
+export function TiktokIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
     </svg>
   );
 }
 
 export function InstagramIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
-      <rect x="4" y="4" width="16" height="16" rx="4.5" />
-      <circle cx="12" cy="12" r="3.6" />
-      <circle cx="16.6" cy="7.4" r="0.9" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-export function LinkedinIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
-      <rect x="4" y="4" width="16" height="16" rx="2.5" />
-      <line x1="8" y1="10.5" x2="8" y2="16" strokeLinecap="round" />
-      <circle cx="8" cy="7.6" r="0.9" fill="currentColor" stroke="none" />
-      <path d="M11.5 16v-3.2a1.8 1.8 0 0 1 3.6 0V16" strokeLinecap="round" strokeLinejoin="round" />
-      <line x1="11.5" y1="10.5" x2="11.5" y2="16" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-export function YoutubeIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
-      <rect x="3.5" y="6.5" width="17" height="11" rx="3.5" />
-      <path d="M10.5 9.8v4.4l4-2.2-4-2.2Z" fill="currentColor" stroke="none" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" {...props}>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+      <circle cx="12" cy="12" r="3.8" />
+      <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
     </svg>
   );
 }

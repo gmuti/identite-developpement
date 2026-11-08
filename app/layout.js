@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
+import { ACTIVE_SOCIAL_PROFILES } from "@/lib/social";
 import { SITE_URL, ORG_NAME, ORG_ACRONYM, SITE_DESCRIPTION } from "@/lib/seo";
 
 // Polices auto-hébergées (public/fonts) - évite une dépendance réseau vers
@@ -81,7 +82,8 @@ const organizationJsonLd = {
     "@type": "PostalAddress",
     addressRegion: "Ontario",
     addressCountry: "CA"
-  }
+  },
+  ...(ACTIVE_SOCIAL_PROFILES.length > 0 ? { sameAs: ACTIVE_SOCIAL_PROFILES.map((p) => p.url) } : {})
 };
 
 export default function RootLayout({ children }) {
