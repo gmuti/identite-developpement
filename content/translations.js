@@ -3,7 +3,8 @@
 export const translations = {
   fr: {
     common: {
-      home: "Accueil"
+      home: "Accueil",
+      breadcrumb: "Fil d’Ariane"
     },
     notFound: {
       eyebrow: "Erreur 404",
@@ -12,7 +13,7 @@ export const translations = {
       cta: "Retour à l'accueil"
     },
     nav: {
-      orgName: "Identité et Développement",
+      orgName: "Identité et Développement Global",
       home: "Accueil",
       about: "À propos",
       departments: "Départements",
@@ -22,7 +23,7 @@ export const translations = {
       donate: "Faire un don"
     },
     footer: {
-      rights: (year) => `© ${year} Identité et Développement. Ontario, Canada.`,
+      rights: (year) => `© ${year} Identité et Développement Global. Ontario, Canada.`,
       navHeading: "Navigation",
       legalHeading: "Légal",
       contactHeading: "Coordonnées",
@@ -159,21 +160,22 @@ export const translations = {
     home: {
       badge: "Organisme à but non lucratif",
       titleLine1: "Découvrir son identité,",
-      titleLine2: "bâtir son avenir.",
+      titleLine2: "bâtir son avenir",
       ctaDonate: "Faire un don",
       ctaMission: "Découvrir notre mission",
       visionEyebrow: "Notre vision",
-      visionTitle: "Former des personnes transformées dans leur identité.",
+      visionTitle: "Former des personnes transformées dans leur identité",
       visionText: "Engagées dans le développement de leur communauté, elles deviennent des agents de changement durable, chez elles comme autour d'elles.",
       missionEyebrow: "Notre mission",
-      missionTitle: "Accompagner la croissance, à chaque étape.",
+      missionTitle: "Accompagner la croissance, à chaque étape",
       valuesEyebrow: "Charte des valeurs",
       valuesTitle: "Ce qui guide chacune de nos actions",
-      deptEyebrow: "Nos axes d'action",
-      deptTitle: "Six départements au service de la mission",
-      newsEyebrow: "À venir",
+      deptEyebrow: "Nos départements",
+      deptTitle: "Un département actif, cinq en préparation",
+      deptLink: "Voir la structure complète",
+      newsEyebrow: "Actualités",
       newsTitle: "Actualités & événements",
-      viewAll: "Voir tout →",
+      viewAll: "Toutes les actualités",
       photoSoon: "Photo à venir",
       newsletterTitle: "Restez informés de nos activités",
       newsletterText: "Recevez nos actualités, conférences et projets directement par courriel.",
@@ -221,6 +223,15 @@ export const translations = {
       noEvents: "Aucun événement n'est confirmé pour le moment. Revenez bientôt pour connaître nos prochaines conférences et formations.",
       photoSoon: "Photo à venir",
       dateSoon: "Date à venir",
+      readMore: "Lire l’article",
+      bodySoon: "Le compte rendu détaillé de cette actualité sera publié prochainement.",
+      galleryTitle: "Galerie photos",
+      galleryOpen: "Agrandir la photo",
+      galleryClose: "Fermer",
+      galleryPrevious: "Photo précédente",
+      galleryNext: "Photo suivante",
+      backToNews: "Toutes les actualités",
+      relatedTitle: "Autres actualités",
       newsletterTitle: "Ne manquez aucune actualité",
       newsletterText: "Abonnez-vous pour recevoir nos prochaines annonces directement par courriel.",
       emailPlaceholder: "Votre adresse courriel",
@@ -276,7 +287,7 @@ export const translations = {
         {
           heading: "Éditeur du site",
           body:
-            "Ce site est édité par Identité et Développement, organisme à but non lucratif basé en Ontario, Canada, actuellement en démarche vers l'obtention du statut d'organisme de bienfaisance enregistré. Responsable de la publication : Olivier Musanganya Lubambo, fondateur."
+            "Ce site est édité par Identité et Développement Global, organisme à but non lucratif basé en Ontario, Canada, actuellement en démarche vers l'obtention du statut d'organisme de bienfaisance enregistré. Responsable de la publication : Olivier Musanganya Lubambo, fondateur."
         },
         {
           heading: "Hébergement",
@@ -285,17 +296,17 @@ export const translations = {
         {
           heading: "Conception et développement",
           body:
-            "Conception, développement et sécurité du site assurés par le département Technologies, Médias et Communication d'Identité et Développement."
+            "Conception, développement et sécurité du site assurés par le département Technologies, Médias et Communication d'Identité et Développement Global."
         },
         {
           heading: "Propriété intellectuelle",
           body:
-            "L'ensemble des textes, images, logos et éléments graphiques de ce site sont la propriété d'Identité et Développement, sauf mention contraire, et ne peuvent être reproduits, distribués ou réutilisés sans autorisation écrite préalable."
+            "L'ensemble des textes, images, logos et éléments graphiques de ce site sont la propriété d'Identité et Développement Global, sauf mention contraire, et ne peuvent être reproduits, distribués ou réutilisés sans autorisation écrite préalable."
         },
         {
           heading: "Limitation de responsabilité",
           body:
-            "Les informations publiées sur ce site sont fournies à titre indicatif et mises à jour dans la mesure du possible. Identité et Développement ne peut être tenu responsable des erreurs, omissions, ou de l'indisponibilité temporaire du site, ni du contenu des sites externes vers lesquels il pourrait renvoyer."
+            "Les informations publiées sur ce site sont fournies à titre indicatif et mises à jour dans la mesure du possible. Identité et Développement Global ne peut être tenu responsable des erreurs, omissions, ou de l'indisponibilité temporaire du site, ni du contenu des sites externes vers lesquels il pourrait renvoyer."
         }
       ]
     },
@@ -329,7 +340,8 @@ export const translations = {
 
   en: {
     common: {
-      home: "Home"
+      home: "Home",
+      breadcrumb: "Breadcrumb"
     },
     notFound: {
       eyebrow: "404 Error",
@@ -338,7 +350,7 @@ export const translations = {
       cta: "Back to home"
     },
     nav: {
-      orgName: "Identité et Développement",
+      orgName: "Identité et Développement Global",
       home: "Home",
       about: "About Us",
       departments: "Departments",
@@ -348,7 +360,7 @@ export const translations = {
       donate: "Donate"
     },
     footer: {
-      rights: (year) => `© ${year} Identité et Développement. Ontario, Canada.`,
+      rights: (year) => `© ${year} Identité et Développement Global. Ontario, Canada.`,
       navHeading: "Navigation",
       legalHeading: "Legal",
       contactHeading: "Contact",
@@ -480,21 +492,22 @@ export const translations = {
     home: {
       badge: "Non-profit organization",
       titleLine1: "Discovering your identity,",
-      titleLine2: "building your future.",
+      titleLine2: "building your future",
       ctaDonate: "Donate",
       ctaMission: "Discover our mission",
       visionEyebrow: "Our vision",
-      visionTitle: "Forming people transformed in their identity.",
+      visionTitle: "Forming people transformed in their identity",
       visionText: "Engaged in the development of their community, they become agents of lasting change, at home and around them.",
       missionEyebrow: "Our mission",
-      missionTitle: "Supporting growth, every step of the way.",
+      missionTitle: "Supporting growth, every step of the way",
       valuesEyebrow: "Charter of values",
       valuesTitle: "What guides every one of our actions",
-      deptEyebrow: "Our areas of action",
-      deptTitle: "Six departments serving the mission",
-      newsEyebrow: "Coming up",
+      deptEyebrow: "Our departments",
+      deptTitle: "One active department, five in preparation",
+      deptLink: "See the full structure",
+      newsEyebrow: "News",
       newsTitle: "News & events",
-      viewAll: "See all →",
+      viewAll: "All news",
       photoSoon: "Photo coming soon",
       newsletterTitle: "Stay informed about our activities",
       newsletterText: "Receive our news, conferences, and projects directly by email.",
@@ -542,6 +555,15 @@ export const translations = {
       noEvents: "No event is confirmed at the moment. Check back soon for our upcoming conferences and training sessions.",
       photoSoon: "Photo coming soon",
       dateSoon: "Date to be announced",
+      readMore: "Read the article",
+      bodySoon: "A detailed report on this news item will be published soon.",
+      galleryTitle: "Photo gallery",
+      galleryOpen: "Enlarge photo",
+      galleryClose: "Close",
+      galleryPrevious: "Previous photo",
+      galleryNext: "Next photo",
+      backToNews: "All news",
+      relatedTitle: "More news",
       newsletterTitle: "Never miss an update",
       newsletterText: "Subscribe to receive our upcoming announcements directly by email.",
       emailPlaceholder: "Your email address",
@@ -597,7 +619,7 @@ export const translations = {
         {
           heading: "Site publisher",
           body:
-            "This site is published by Identité et Développement, a non-profit organization based in Ontario, Canada, currently in the process of obtaining registered charity status. Publication is overseen by Olivier Musanganya Lubambo, founder."
+            "This site is published by Identité et Développement Global, a non-profit organization based in Ontario, Canada, currently in the process of obtaining registered charity status. Publication is overseen by Olivier Musanganya Lubambo, founder."
         },
         {
           heading: "Hosting",
@@ -605,17 +627,17 @@ export const translations = {
         },
         {
           heading: "Design and development",
-          body: "Site design, development, and security are handled by the Technologies, Media and Communication department of Identité et Développement."
+          body: "Site design, development, and security are handled by the Technologies, Media and Communication department of Identité et Développement Global."
         },
         {
           heading: "Intellectual property",
           body:
-            "All text, images, logos, and graphic elements on this site are the property of Identité et Développement, unless otherwise stated, and may not be reproduced, distributed, or reused without prior written permission."
+            "All text, images, logos, and graphic elements on this site are the property of Identité et Développement Global, unless otherwise stated, and may not be reproduced, distributed, or reused without prior written permission."
         },
         {
           heading: "Limitation of liability",
           body:
-            "Information published on this site is provided for informational purposes and updated whenever possible. Identité et Développement cannot be held liable for errors, omissions, temporary unavailability of the site, or the content of external sites it may link to."
+            "Information published on this site is provided for informational purposes and updated whenever possible. Identité et Développement Global cannot be held liable for errors, omissions, temporary unavailability of the site, or the content of external sites it may link to."
         }
       ]
     },

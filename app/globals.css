@@ -6,79 +6,59 @@ html {
   scroll-behavior: smooth;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(22px); }
+@layer components {
+  /* Petit titre au-dessus d'un titre de section */
+  .eyebrow {
+    @apply text-sm font-medium text-gold-dark;
+  }
+  .eyebrow-on-dark {
+    @apply text-sm font-medium text-gold;
+  }
+  .section-title {
+    @apply font-display text-3xl leading-tight text-navy sm:text-4xl;
+  }
+  .section-title-on-dark {
+    @apply font-display text-3xl leading-tight text-white sm:text-4xl;
+  }
+
+  /* Boutons - un seul jeu de styles pour tout le site */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors duration-150 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+  .btn-sm {
+    @apply px-4 py-2;
+  }
+  .btn-primary {
+    @apply bg-gold text-navy-dark hover:bg-gold-hover focus-visible:outline-gold;
+  }
+  .btn-navy {
+    @apply bg-navy text-white hover:bg-navy-dark focus-visible:outline-navy;
+  }
+  .btn-outline-on-dark {
+    @apply border border-white/30 text-white hover:border-white/60 hover:bg-white/5 focus-visible:outline-white;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-line bg-white px-4 py-3 text-sm text-ink transition-colors placeholder:text-muted/70 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/15;
+  }
+  .field-label {
+    @apply mb-2 block text-sm font-medium text-ink;
+  }
+
+  /* Carte cliquable : seul l'encadré change au survol, rien ne bouge */
+  .card-link {
+    @apply transition-colors duration-150 ease-out hover:border-gold-dark/40;
+  }
+}
+
+/* Une seule entrée au chargement : l'en-tête de page monte légèrement en fondu */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes floatY {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-14px); }
-}
-@keyframes shimmer {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 0 0 rgba(231,198,69,0.55); }
-  70% { box-shadow: 0 0 0 14px rgba(231,198,69,0); }
-  100% { box-shadow: 0 0 0 0 rgba(231,198,69,0); }
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 .reveal {
   opacity: 0;
-  animation: fadeInUp 0.7s ease forwards;
-}
-.stagger-card {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-}
-.stagger-card:nth-child(1) { animation-delay: 0.05s; }
-.stagger-card:nth-child(2) { animation-delay: 0.13s; }
-.stagger-card:nth-child(3) { animation-delay: 0.21s; }
-.stagger-card:nth-child(4) { animation-delay: 0.29s; }
-.stagger-card:nth-child(5) { animation-delay: 0.37s; }
-.stagger-card:nth-child(6) { animation-delay: 0.45s; }
-.stagger-card:nth-child(7) { animation-delay: 0.53s; }
-.stagger-card:nth-child(8) { animation-delay: 0.61s; }
-
-.ring-spin { animation: spinSlow 100s linear infinite; }
-.ring-float { animation: floatY 7s ease-in-out infinite; }
-.btn-pulse { animation: pulseGlow 2.6s ease-in-out infinite; }
-.btn-pulse:hover { animation: none; }
-.marquee-track { animation: marquee 26s linear infinite; }
-
-.shimmer-text {
-  background: linear-gradient(90deg, #e7c645, #fff3c4, #e7c645, #c9a730, #e7c645);
-  background-size: 240% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.marquee-wrap {
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.marquee-wrap:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-.card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(0, 71, 113, 0.12);
+  animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {

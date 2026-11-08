@@ -36,20 +36,20 @@ export default function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-2">
             <Image src="/favicon.png" alt={t.nav.orgName} width={28} height={28} />
-            <span className="font-display text-[15px] text-white">{t.nav.orgName}</span>
+            <span className="font-display text-base text-white">{t.nav.orgName}</span>
           </Link>
-          <p className="mt-2.5 max-w-xs text-[13px] leading-relaxed text-[#9FB3BF]">{t.siteData.slogan}</p>
-          <span className="mt-3 inline-block rounded-full border border-white/10 px-3 py-1 text-[11px] font-semibold text-gold">
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-on-navy-muted">{t.siteData.slogan}</p>
+          <span className="mt-3 block text-xs text-on-navy-faint">
             {t.footer.nonprofitBadge}
           </span>
 
-          <div className="mt-4 flex items-center gap-2.5">
+          <div className="mt-4 flex items-center gap-2">
             {SOCIAL_LINKS.map(({ name, href, Icon }) => (
               <a
                 key={name}
                 href={href}
                 aria-label={name}
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-[#9FB3BF] transition-colors hover:border-gold/40 hover:text-gold"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-on-navy-muted transition-colors hover:border-gold/40 hover:text-gold"
               >
                 <Icon className="h-3.5 w-3.5" />
               </a>
@@ -58,11 +58,11 @@ export default function Footer() {
         </div>
 
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wide text-gold">{t.footer.navHeading}</span>
-          <ul className="mt-3 flex flex-col gap-2">
+          <span className="text-sm font-medium text-gold">{t.footer.navHeading}</span>
+          <ul className="mt-4 flex flex-col gap-2">
             {navLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-[13px] text-[#9FB3BF] transition-colors hover:text-white">
+                <Link href={item.href} className="text-sm text-on-navy-muted transition-colors hover:text-white">
                   {item.label}
                 </Link>
               </li>
@@ -71,11 +71,11 @@ export default function Footer() {
         </div>
 
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wide text-gold">{t.footer.legalHeading}</span>
-          <ul className="mt-3 flex flex-col gap-2">
+          <span className="text-sm font-medium text-gold">{t.footer.legalHeading}</span>
+          <ul className="mt-4 flex flex-col gap-2">
             {legalLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-[13px] text-[#9FB3BF] transition-colors hover:text-white">
+                <Link href={item.href} className="text-sm text-on-navy-muted transition-colors hover:text-white">
                   {item.label}
                 </Link>
               </li>
@@ -84,17 +84,17 @@ export default function Footer() {
         </div>
 
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wide text-gold">{t.footer.contactHeading}</span>
-          <ul className="mt-3 flex flex-col gap-2">
-            <li className="text-[13px] leading-relaxed text-[#9FB3BF]">{contactInfo.email}</li>
-            <li className="text-[13px] leading-relaxed text-[#9FB3BF]">{contactInfo.phone}</li>
-            <li className="text-[13px] leading-relaxed text-[#9FB3BF]">{contactInfo.address}</li>
+          <span className="text-sm font-medium text-gold">{t.footer.contactHeading}</span>
+          <ul className="mt-4 flex flex-col gap-2">
+            <li className="text-sm leading-relaxed text-on-navy-muted">{contactInfo.email}</li>
+            <li className="text-sm leading-relaxed text-on-navy-muted">{contactInfo.phone}</li>
+            <li className="text-sm leading-relaxed text-on-navy-muted">{contactInfo.address}</li>
           </ul>
         </div>
       </div>
 
       <div className="mx-auto mt-8 max-w-7xl border-t border-white/5 pt-5">
-        <span className="text-xs text-[#7C93A0]">{t.footer.rights(new Date().getFullYear())}</span>
+        <span className="text-xs text-on-navy-faint">{t.footer.rights(new Date().getFullYear())}</span>
       </div>
     </footer>
   );
