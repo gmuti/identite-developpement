@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import MemberCard from "@/components/MemberCard";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CheckIcon from "@/components/icons/CheckIcon";
@@ -7,7 +9,8 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function AboutContent() {
   const { t } = useLanguage();
-  const { vision, mission, objectifs, values, fondateurs } = t.siteData;
+  const { vision, mission, objectifs, values } = t.siteData;
+  const fondateurs = t.team.groups.find((g) => g.id === "fondateurs").members;
 
   return (
     <>
@@ -63,22 +66,19 @@ export default function AboutContent() {
       {/* FONDATEURS */}
       <section className="bg-navy px-6 py-20 sm:px-12">
         <div className="mx-auto max-w-5xl">
-          <SectionHeading eyebrow={t.about.foundersEyebrow} title={t.about.foundersTitle} onDark />
-          <div className="grid gap-6 md:grid-cols-2">
+          <SectionHeading
+            eyebrow={t.about.foundersEyebrow}
+            title={t.about.foundersTitle}
+            onDark
+            action={
+              <Link href="/equipe/" className="text-sm font-medium text-white transition-colors hover:text-gold">
+                {t.about.teamLink} <span aria-hidden="true">→</span>
+              </Link>
+            }
+          />
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
             {fondateurs.map((f) => (
-              <div key={f.name} className="flex items-start gap-5 rounded-xl bg-white p-6 sm:p-8">
-                <div
-                  aria-hidden="true"
-                  className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-cream font-display text-xl text-navy ring-1 ring-line"
-                >
-                  {f.initials}
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-ink">{f.name}</h3>
-                  <span className="mt-1 block text-sm font-medium text-gold-dark">{f.role}</span>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">{f.description}</p>
-                </div>
-              </div>
+              <MemberCard key={f.name} member={f} onDark />
             ))}
           </div>
         </div>

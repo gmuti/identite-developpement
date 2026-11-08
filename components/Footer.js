@@ -18,6 +18,7 @@ export default function Footer() {
 
   const navLinks = [
     { href: "/a-propos", label: t.nav.about },
+    { href: "/equipe", label: t.nav.team },
     { href: "/departements", label: t.nav.departments },
     { href: "/projets", label: t.nav.projects },
     { href: "/actualites", label: t.nav.news },
@@ -27,7 +28,8 @@ export default function Footer() {
 
   const legalLinks = [
     { href: "/mentions-legales", label: t.legal.crumb },
-    { href: "/politique-de-confidentialite", label: t.privacy.crumb }
+    { href: "/politique-de-confidentialite", label: t.privacy.crumb },
+    { href: "/accessibilite", label: t.accessibility.crumb }
   ];
 
   return (

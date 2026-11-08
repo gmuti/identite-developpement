@@ -31,6 +31,7 @@ export default function Header() {
   const nav = [
     { href: "/", label: t.nav.home },
     { href: "/a-propos", label: t.nav.about },
+    { href: "/equipe", label: t.nav.team },
     { href: "/departements", label: t.nav.departments },
     { href: "/projets", label: t.nav.projects },
     { href: "/actualites", label: t.nav.news },
@@ -53,7 +54,7 @@ export default function Header() {
           <Image src="/logo-full.png" alt={t.nav.orgName} width={106} height={40} className="h-10 w-auto" priority />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-6 xl:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -74,7 +75,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <LanguageToggle locale={locale} onToggle={toggleLocale} />
           <Link href="/don/" className="btn btn-primary btn-sm">
             {t.nav.donate}
@@ -86,7 +87,7 @@ export default function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 xl:hidden"
         >
           <span className={`h-0.5 w-6 bg-navy transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
           <span className={`h-0.5 w-6 bg-navy transition-opacity ${open ? "opacity-0" : ""}`} />
@@ -95,7 +96,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-line bg-white px-6 py-4 lg:hidden">
+        <div id="mobile-menu" className="border-t border-line bg-white px-6 py-4 xl:hidden">
           <nav className="flex flex-col">
             {nav.map((item) => (
               <Link

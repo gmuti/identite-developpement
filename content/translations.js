@@ -16,6 +16,7 @@ export const translations = {
       orgName: "Identité et Développement Global",
       home: "Accueil",
       about: "À propos",
+      team: "Notre équipe",
       departments: "Départements",
       projects: "Nos projets",
       news: "Actualités",
@@ -47,20 +48,6 @@ export const translations = {
         "Collaborer avec des organismes poursuivant des objectifs similaires."
       ],
       values: ["Intégrité", "Transparence", "Responsabilité", "Respect", "Compassion", "Service", "Excellence", "Bonne gestion"],
-      fondateurs: [
-        {
-          initials: "OM",
-          name: "Olivier Musanganya Lubambo",
-          role: "Fondateur",
-          description: "Gardien de la vision depuis la fondation de l'organisation."
-        },
-        {
-          initials: "GL",
-          name: "Germaine Linda Mutikanga Basimine",
-          role: "Cofondatrice",
-          description: "À ses côtés depuis les premiers jours, elle incarne l'engagement communautaire au cœur de la mission."
-        }
-      ],
       departments: [
         {
           name: "Technologies, Médias et Communication",
@@ -195,7 +182,66 @@ export const translations = {
       valuesEyebrow: "Charte des valeurs",
       valuesTitle: "Nos huit valeurs fondamentales",
       foundersEyebrow: "Gardiens de la vision",
-      foundersTitle: "Nos fondateurs"
+      foundersTitle: "Nos fondateurs",
+      teamLink: "Voir toute l'équipe"
+    },
+    team: {
+      crumb: "Notre équipe",
+      title: "Notre équipe",
+      subtitle: "Les personnes qui portent la vision et font vivre l'organisation au quotidien.",
+      groups: [
+        {
+          id: "fondateurs",
+          eyebrow: "Gardiens de la vision",
+          title: "Fondateurs",
+          members: [
+            {
+              initials: "OM",
+              name: "Olivier Musanganya Lubambo",
+              role: "Fondateur · Président",
+              description: "Gardien de la vision depuis la fondation de l'organisation.",
+              photo: null
+            },
+            {
+              initials: "GL",
+              name: "Germaine Linda Mutikanga Basimine",
+              role: "Cofondatrice · Secrétaire",
+              description: "À ses côtés depuis les premiers jours, elle incarne l'engagement communautaire au cœur de la mission.",
+              photo: null
+            }
+          ]
+        },
+        {
+          id: "conseil",
+          eyebrow: "Gouvernance",
+          title: "Conseil d'administration",
+          intro: "Aux côtés des fondateurs, qui y siègent comme président et secrétaire.",
+          members: [{ initials: "MD", name: "Moise Duciel Mpozayo", role: "Administrateur", photo: null }]
+        },
+        {
+          id: "technologies-medias-communication",
+          eyebrow: "Département actif",
+          title: "Technologies, Médias et Communication",
+          motto: "Communiquer avec excellence, innover avec impact.",
+          members: [
+            {
+              initials: "BF",
+              name: "Bwira Mishiki Freddy",
+              role: "Directeur du département · Responsable du service Design graphique et identité visuelle",
+              photo: null
+            },
+            {
+              initials: "GM",
+              name: "Gedeon Mutikanga Ruvuguta",
+              role: "Responsable du service Informatique et développement web",
+              photo: null
+            }
+          ]
+        }
+      ],
+      joinTitle: "Les autres départements se structurent",
+      joinText: "Les responsables des cinq autres départements seront nommés par le conseil d'administration au fil du développement de l'organisation.",
+      joinLink: "Voir les départements"
     },
     departments: {
       crumb: "Départements",
@@ -282,7 +328,7 @@ export const translations = {
     legal: {
       crumb: "Mentions légales",
       title: "Mentions légales",
-      updated: "Dernière mise à jour : 23 septembre 2026",
+      updated: "Dernière mise à jour : 8 novembre 2026",
       sections: [
         {
           heading: "Éditeur du site",
@@ -313,7 +359,7 @@ export const translations = {
     privacy: {
       crumb: "Politique de confidentialité",
       title: "Politique de confidentialité",
-      updated: "Dernière mise à jour : 23 septembre 2026",
+      updated: "Dernière mise à jour : 8 novembre 2026",
       sections: [
         {
           heading: "Données que nous collectons",
@@ -326,6 +372,21 @@ export const translations = {
             "Ce site n'utilise aucun cookie de suivi ni outil d'analyse ou de publicité tiers. La seule information conservée localement est votre préférence de langue d'affichage (français ou anglais), enregistrée dans le stockage local de votre navigateur (localStorage) - elle reste sur votre appareil et n'est jamais transmise à nos serveurs."
         },
         {
+          heading: "Images et contenus des actualités",
+          body:
+            "Les actualités et leurs photos sont gérées avec le service Sanity et les images sont affichées depuis son réseau de diffusion (cdn.sanity.io). Comme pour tout chargement d'image sur le Web, votre navigateur transmet alors à ce service des informations techniques (adresse IP, type de navigateur) nécessaires à l'affichage. Aucun cookie n'est déposé à cette occasion."
+        },
+        {
+          heading: "Photos des membres de l'équipe",
+          body:
+            "Les photos et les noms des membres présentés sur la page Notre équipe sont publiés avec leur accord. Toute personne concernée peut demander en tout temps la modification ou le retrait de sa photo ou de ses informations en nous écrivant."
+        },
+        {
+          heading: "Liens vers les réseaux sociaux",
+          body:
+            "Le site contient de simples liens vers nos pages sur X, TikTok et Instagram. Il n'intègre aucun bouton, flux ou module de ces plateformes : aucune donnée ne leur est transmise tant que vous ne cliquez pas sur ces liens. Une fois sur ces plateformes, leurs propres politiques de confidentialité s'appliquent."
+        },
+        {
           heading: "Vos droits",
           body:
             "Conformément à la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE), vous pouvez en tout temps demander à accéder aux renseignements personnels que vous nous avez transmis, les faire corriger, ou en demander la suppression, en nous écrivant à l'adresse ci-dessous."
@@ -333,6 +394,33 @@ export const translations = {
         {
           heading: "Nous contacter",
           body: "Pour toute question relative à cette politique ou à vos renseignements personnels, écrivez-nous à l'adresse indiquée sur notre page Contact."
+        }
+      ]
+    },
+    accessibility: {
+      crumb: "Accessibilité",
+      title: "Déclaration d'accessibilité",
+      updated: "Dernière mise à jour : 8 novembre 2026",
+      sections: [
+        {
+          heading: "Notre engagement",
+          body:
+            "Identité et Développement Global souhaite que son site soit utilisable par tous, y compris par les personnes en situation de handicap. Nous visons la conformité aux Règles pour l'accessibilité des contenus Web (WCAG) 2.1, niveau AA, norme de référence de la Loi sur l'accessibilité pour les personnes handicapées de l'Ontario (LAPHO)."
+        },
+        {
+          heading: "Mesures en place",
+          body:
+            "Contrastes de couleurs vérifiés pour la lecture du texte, lien d'accès direct au contenu principal, navigation possible entièrement au clavier avec repère de focus visible, structure de titres cohérente, champs de formulaire associés à leur libellé, respect du réglage « réduire les animations » de votre appareil, et site disponible en français et en anglais."
+        },
+        {
+          heading: "Limites connues",
+          body:
+            "Le site n'a pas encore fait l'objet d'un audit d'accessibilité indépendant. Certaines images publiées dans les actualités peuvent ne pas encore disposer d'une description textuelle détaillée. Nous corrigeons ces points au fur et à mesure."
+        },
+        {
+          heading: "Nous signaler un problème",
+          body:
+            "Si vous rencontrez une difficulté pour accéder à un contenu ou à une fonctionnalité du site, écrivez-nous à l'adresse indiquée sur notre page Contact. Nous vous répondrons et, si nécessaire, vous fournirons l'information dans un autre format."
         }
       ]
     }
@@ -353,6 +441,7 @@ export const translations = {
       orgName: "Identité et Développement Global",
       home: "Home",
       about: "About Us",
+      team: "Our Team",
       departments: "Departments",
       projects: "Our Projects",
       news: "News",
@@ -383,20 +472,6 @@ export const translations = {
         "Collaborate with organizations pursuing similar goals."
       ],
       values: ["Integrity", "Transparency", "Accountability", "Respect", "Compassion", "Service", "Excellence", "Good Stewardship"],
-      fondateurs: [
-        {
-          initials: "OM",
-          name: "Olivier Musanganya Lubambo",
-          role: "Founder",
-          description: "Guardian of the vision since the organization's founding."
-        },
-        {
-          initials: "GL",
-          name: "Germaine Linda Mutikanga Basimine",
-          role: "Co-founder",
-          description: "By his side from the very first days, she embodies the community commitment at the heart of the mission."
-        }
-      ],
       departments: [
         {
           name: "Technology, Media and Communication",
@@ -527,7 +602,66 @@ export const translations = {
       valuesEyebrow: "Charter of values",
       valuesTitle: "Our eight core values",
       foundersEyebrow: "Guardians of the vision",
-      foundersTitle: "Our founders"
+      foundersTitle: "Our founders",
+      teamLink: "Meet the whole team"
+    },
+    team: {
+      crumb: "Our Team",
+      title: "Our team",
+      subtitle: "The people who carry the vision and keep the organization running day to day.",
+      groups: [
+        {
+          id: "fondateurs",
+          eyebrow: "Guardians of the vision",
+          title: "Founders",
+          members: [
+            {
+              initials: "OM",
+              name: "Olivier Musanganya Lubambo",
+              role: "Founder · President",
+              description: "Guardian of the vision since the organization's founding.",
+              photo: null
+            },
+            {
+              initials: "GL",
+              name: "Germaine Linda Mutikanga Basimine",
+              role: "Co-founder · Secretary",
+              description: "By his side from the very first days, she embodies the community commitment at the heart of the mission.",
+              photo: null
+            }
+          ]
+        },
+        {
+          id: "conseil",
+          eyebrow: "Governance",
+          title: "Board of Directors",
+          intro: "Alongside the founders, who sit on the board as president and secretary.",
+          members: [{ initials: "MD", name: "Moise Duciel Mpozayo", role: "Board member", photo: null }]
+        },
+        {
+          id: "technologies-medias-communication",
+          eyebrow: "Active department",
+          title: "Technologies, Media and Communication",
+          motto: "Communicate with excellence, innovate with impact.",
+          members: [
+            {
+              initials: "BF",
+              name: "Bwira Mishiki Freddy",
+              role: "Department Director · Head of Graphic Design and Visual Identity",
+              photo: null
+            },
+            {
+              initials: "GM",
+              name: "Gedeon Mutikanga Ruvuguta",
+              role: "Head of IT and Web Development",
+              photo: null
+            }
+          ]
+        }
+      ],
+      joinTitle: "The other departments are taking shape",
+      joinText: "Leads for the five other departments will be appointed by the Board of Directors as the organization grows.",
+      joinLink: "See the departments"
     },
     departments: {
       crumb: "Departments",
@@ -614,7 +748,7 @@ export const translations = {
     legal: {
       crumb: "Legal Notice",
       title: "Legal Notice",
-      updated: "Last updated: September 23, 2026",
+      updated: "Last updated: November 8, 2026",
       sections: [
         {
           heading: "Site publisher",
@@ -644,7 +778,7 @@ export const translations = {
     privacy: {
       crumb: "Privacy Policy",
       title: "Privacy Policy",
-      updated: "Last updated: September 23, 2026",
+      updated: "Last updated: November 8, 2026",
       sections: [
         {
           heading: "Data we collect",
@@ -657,6 +791,21 @@ export const translations = {
             "This site does not use any tracking cookies, analytics, or third-party advertising tools. The only information stored locally is your display language preference (French or English), saved in your browser's local storage - it stays on your device and is never sent to our servers."
         },
         {
+          heading: "News images and content",
+          body:
+            "News items and their photos are managed with the Sanity service, and images are displayed from its delivery network (cdn.sanity.io). As with any image loaded on the Web, your browser sends this service the technical information needed to display it (IP address, browser type). No cookie is set in the process."
+        },
+        {
+          heading: "Team member photos",
+          body:
+            "The photos and names of the members shown on the Our Team page are published with their consent. Anyone concerned may at any time ask for their photo or information to be changed or removed by writing to us."
+        },
+        {
+          heading: "Links to social networks",
+          body:
+            "The site contains plain links to our pages on X, TikTok, and Instagram. It does not embed any button, feed, or widget from these platforms: no data is sent to them unless you click these links. Once on these platforms, their own privacy policies apply."
+        },
+        {
           heading: "Your rights",
           body:
             "Under Canada's Personal Information Protection and Electronic Documents Act (PIPEDA), you may at any time request access to, correction of, or deletion of the personal information you have shared with us by writing to the address below."
@@ -664,6 +813,33 @@ export const translations = {
         {
           heading: "Contact us",
           body: "For any question about this policy or your personal information, write to us at the address listed on our Contact page."
+        }
+      ]
+    },
+    accessibility: {
+      crumb: "Accessibility",
+      title: "Accessibility statement",
+      updated: "Last updated: November 8, 2026",
+      sections: [
+        {
+          heading: "Our commitment",
+          body:
+            "Identité et Développement Global wants its website to be usable by everyone, including people with disabilities. We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, the standard referenced by the Accessibility for Ontarians with Disabilities Act (AODA)."
+        },
+        {
+          heading: "Measures in place",
+          body:
+            "Text color contrast checked for readability, a skip link to the main content, full keyboard navigation with a visible focus indicator, a consistent heading structure, form fields linked to their labels, support for your device's \"reduce motion\" setting, and the site available in both French and English."
+        },
+        {
+          heading: "Known limitations",
+          body:
+            "The site has not yet undergone an independent accessibility audit. Some images published in news items may not yet have a detailed text description. We address these points as we go."
+        },
+        {
+          heading: "Report a problem",
+          body:
+            "If you have difficulty accessing any content or feature of the site, write to us at the address listed on our Contact page. We will reply and, if needed, provide the information in another format."
         }
       ]
     }
