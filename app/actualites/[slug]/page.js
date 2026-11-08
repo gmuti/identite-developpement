@@ -4,7 +4,9 @@ import { getAllNewsSlugs, getNewsBySlug, getNews, urlFor } from "@/lib/sanity";
 
 // Export statique : toutes les pages d'articles sont générées au build.
 // Une publication dans Sanity déclenche un redéploiement (webhook), donc les nouveaux articles apparaissent.
-export const dynamicParams = false;
+// Ne pas ajouter `export const dynamicParams = false` : avec output "export", Next 14.2.5 le
+// confond en mode dev avec un generateStaticParams() absent (erreur 500 sur chaque article).
+// En export statique, une adresse inconnue renvoie de toute façon la page 404.
 
 export async function generateStaticParams() {
   const slugs = await getAllNewsSlugs();
