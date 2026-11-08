@@ -75,6 +75,7 @@ const organizationJsonLd = {
   slogan: "Découvrir son identité, bâtir son avenir.",
   address: {
     "@type": "PostalAddress",
+    addressLocality: "Ottawa",
     addressRegion: "Ontario",
     addressCountry: "CA"
   },
